@@ -1,0 +1,48 @@
+T	Come. Let me show you something.
+S	What is it?
+T	There. See it?
+S	It's... some sort of orb.
+
+T	Are you familiar with Plato's Allegory of the Cave?
+S	Seriously? Yes, I know about it.
+T	What is it?
+S	What is this, a philosophy class?
+T	Humour me.
+S	*sigh* It describes a group of people who have been trapped in a cave since childhood. They're locked in place, unable to move or see anything except the shadows on a wall.
+T	And where do the shadows come from?
+S	There's a fire behind them, and in between, more people, holding up puppets. The prisoners can't see anything except those shadows, so as far as they know, the shadows _are_ the puppets.
+T	That's about it, yes.
+S	I don't see what this has to do with... well, anything.
+T	Let's try something else.
+
+T	What did you just pick up?
+S	A coin.
+T	Really? It was bright yellow. It had jagged edges.
+S	Well, it was a sprite. It's pixel art.
+T	So, coins are bright yellow, and have jagged edges?
+S	Well, no, it was a representation.
+T	But you said it was a coin.
+S	Because it was supposed to be a coin.
+
+S	Where are you going with all of this?
+T	If we were to apply the Allegory of the Cave to what we're doing right now, which role would you be?
+S	I suppose I'd be one of the prisoners.
+T	And the sprites?
+S	They'd be the representations. But I know that they're not reality, so the allegory doesn't apply.
+T	Why shouldn't it?
+S	Well, the whole point of the scenario is that the prisoners are unaware of anything outside of the cave. If they knew about the puppets behind them, they wouldn't be fooled by the shadows.
+T	Well, perhaps they don't need to be fooled.
+
+S	Come on, then. What's your point?
+T	My point is that there could be people looking at those shadows other than the prisoners. People who have gone back into the cave.
+S	But they would know that they were just looking at shadows. You're talking about people accepting a comfortable lie.
+T	Indeed. The necessary conceit is that for those people, the shadows and the puppets are, for all intents and purposes, one and the same. The puppets, just as the shadows, are untouchable and immutable. But of the two, one may be more pleasing to the eye.
+S	You're saying that, if they think they can't change reality, they might as well accept the illusion?
+T	Precisely.
+
+S	This sounds like you're trying to sell me on a conspiracy.
+T	Don't worry. The real world can't be described with a neat little allegory.
+S	If you said it could, I'd think you were the one holding up the puppets.
+T	Well, exactly. People have reasons for doing what they do, and it usually isn't inspired by shadows on the wall of a cave.
+S	But there are still plenty of would-be puppeteers.
+T	Oh, sure. But who says they ever go outside?
