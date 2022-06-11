@@ -12,7 +12,7 @@ void fragment() {
 	float grad = texture(gradient, UV).r;
 	float flame_a = texture(clouds, flame_uv_a).r;
 	float flame_b = texture(clouds, flame_uv_b).g;
-	float flame = flame_a * flame_b * 2.0;
+	float flame = min(flame_a * flame_b * 2.0, 1.0);
 	vec3 flame_colour = texture(colour, vec2(flame , 0.0)).rgb;
 	flame_colour.g *= 0.5;
 	EMISSION = flame_colour * grad * 4.0;

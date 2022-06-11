@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://shaders/fire.gdshader" type="Shader" id=1]
+[ext_resource path="res://textures/clouds.png" type="Texture" id=2]
+[ext_resource path="res://textures/flame_gradient.png" type="Texture" id=3]
+[ext_resource path="res://textures/gradient.png" type="Texture" id=4]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/gradient = ExtResource( 4 )
+shader_param/clouds = ExtResource( 2 )
+shader_param/colour = ExtResource( 3 )
