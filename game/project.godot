@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "OrbShip",
+"language": "GDScript",
+"path": "res://objects/OrbShip.gd"
+} ]
+_global_script_class_icons={
+"OrbShip": ""
+}
+
 [application]
 
 config/name="Back Into the Cave"
