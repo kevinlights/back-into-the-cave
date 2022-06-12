@@ -22,3 +22,4 @@ func _physics_process(delta : float) -> void:
 
 func _ready() -> void:
 	$AnimationPlayer.play("intro")
+	$AnimationPlayer.seek(20.0)

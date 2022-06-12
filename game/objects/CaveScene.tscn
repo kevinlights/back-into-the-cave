@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tilesets/cave.tres" type="TileSet" id=1]
-[ext_resource path="res://objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/CavePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/CaveScene.gd" type="Script" id=3]
 
 [node name="CaveScene" type="Node2D"]
