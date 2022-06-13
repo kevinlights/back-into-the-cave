@@ -29,6 +29,10 @@ func _on_orb_ship_destroyed() -> void:
 	ship_arm.stop()
 	timer_respawn_orb_ship.start()
 
+func _on_Key_collector() -> void:
+	current_state = State.CAVE_SCENE
+	$Inside_2D.show()
+
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
 		current_state = State.SHIP_SCENE
@@ -42,6 +46,10 @@ func _physics_process(delta : float) -> void:
 		camera.global_transform = camera.global_transform.interpolate_with(ship.camera.global_transform, CAMERA_MOVE_SPEED * delta)
 		camera.fov = lerp(camera.fov, ship.camera.fov, CAMERA_MOVE_SPEED * delta)
 	elif current_state == State.CAVE_SCENE:
+		camera.fov = lerp(camera.fov, 35.0, CAMERA_MOVE_SPEED * delta)
+		camera.translation = lerp(camera.translation, Vector3(-5.0, 0.0, 0.0), CAMERA_MOVE_SPEED * delta)
+		camera.rotation_degrees = lerp(camera.rotation_degrees, Vector3(0.0, -90.0, 0.0), CAMERA_MOVE_SPEED * delta)
+		camera_arm.translation = lerp(camera_arm.translation, Vector3.ZERO, CAMERA_MOVE_SPEED * delta)
 		camera_arm.rotation.x = lerp_angle(camera_arm.rotation.x, 0.0, CAMERA_MOVE_SPEED * delta)
 		camera_arm.rotation.z = lerp_angle(camera_arm.rotation.z, 0.0, CAMERA_MOVE_SPEED * delta)
 		var player_rotate : float = (PI * 1.5) - (cave_scene.player_pos.x * PI * 2.0)
@@ -49,4 +57,3 @@ func _physics_process(delta : float) -> void:
 
 func _ready() -> void:
 	$AnimationPlayer.play("intro")
-	$AnimationPlayer.seek(18.0)

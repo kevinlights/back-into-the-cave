@@ -21,8 +21,8 @@ roughness = 0.0
 
 [sub_resource type="SphereMesh" id=3]
 flip_faces = true
-radius = 0.95
-height = 1.9
+radius = 0.99
+height = 1.98
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -257,5 +257,6 @@ render_target_v_flip = true
 wait_time = 2.0
 one_shot = true
 
+[connection signal="collector" from="Level1/Key" to="." method="_on_Key_collector"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_RespawnOrbShip" to="." method="_on_Timer_RespawnOrbShip_timeout"]
