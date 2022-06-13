@@ -69,3 +69,6 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 5.61943e-08, -6.69697e-08, 0, 0.766045, 0.642788, 8.74228e-08, 0.642788, -0.766044, 0, 1.5, -1 )

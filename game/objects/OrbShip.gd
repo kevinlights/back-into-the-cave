@@ -6,6 +6,7 @@ const _Explosion : PackedScene = preload("res://objects/Explosion.tscn")
 
 onready var mesh : MeshInstance = $Mesh
 onready var thruster : Spatial = $Mesh/Thruster
+onready var camera : Camera = $Camera
 
 signal destroyed
 
@@ -19,5 +20,5 @@ func get_hit() -> void:
 	var explosion : Spatial = _Explosion.instance()
 	explosion.global_transform = self.global_transform
 	get_tree().root.add_child(explosion)
-	hide()
 	emit_signal("destroyed")
+	queue_free()
