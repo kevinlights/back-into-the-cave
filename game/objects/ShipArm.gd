@@ -3,13 +3,17 @@ extends Spatial
 const ROTATE_INCR : float = 6.0
 const ROTATE_MAX : float = 3.0
 const THRUST_INCR : float = 3.0
-const THRUST_MAX : float = 2.0
+const THRUST_MAX : float = 1.5
 const THRUST_DECR : float = 2.0
 
 onready var ship : Spatial = $Ship
 
 var forwards_thrust : float = 0.0
 var turn_speed : float = 0.0
+
+func _on_Ship_destroyed() -> void:
+	forwards_thrust = 0.0
+	turn_speed = 0.0
 
 func _physics_process(delta : float) -> void:
 	if Input.is_action_pressed("ui_left"):

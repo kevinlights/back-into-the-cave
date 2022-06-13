@@ -1,6 +1,6 @@
 extends Spatial
 
-const CAMERA_MOVE_SPEED : float = 5.0
+const CAMERA_MOVE_SPEED : float = 3.0
 
 onready var camera_arm : Spatial = $CameraArm
 onready var camera : Camera = $CameraArm/Camera
@@ -28,4 +28,4 @@ func _physics_process(delta : float) -> void:
 
 func _ready() -> void:
 	$AnimationPlayer.play("intro")
-	$AnimationPlayer.seek(15.0)
+	$AnimationPlayer.seek(18.0)
