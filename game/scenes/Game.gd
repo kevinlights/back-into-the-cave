@@ -10,6 +10,7 @@ onready var cave_scene : Node2D = $Viewport/CaveScene
 onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
 onready var subtitle_controller : Node = $SubtitleController
+onready var music_controller : Node = $MusicController
 
 enum State {INTRO, SHIP_SCENE, CAVE_SCENE}
 
@@ -59,5 +60,7 @@ func _physics_process(delta : float) -> void:
 		camera_arm.rotation.y = lerp_angle(camera_arm.rotation.y, player_rotate, CAMERA_MOVE_SPEED * delta)
 
 func _ready() -> void:
+	yield(get_tree(), "idle_frame")
+	yield(get_tree().create_timer(3.0), "timeout")
+	music_controller.play_track("opening")
 	$AnimationPlayer.play("intro")
-	$AnimationPlayer.seek(15.0)
