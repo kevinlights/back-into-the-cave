@@ -9,6 +9,7 @@ onready var camera : Camera = $CameraArm/Camera
 onready var cave_scene : Node2D = $Viewport/CaveScene
 onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
+onready var subtitle_controller : Node = $SubtitleController
 
 enum State {INTRO, SHIP_SCENE, CAVE_SCENE}
 
@@ -30,6 +31,7 @@ func _on_orb_ship_destroyed() -> void:
 	timer_respawn_orb_ship.start()
 
 func _on_Key_collector() -> void:
+	return
 	current_state = State.CAVE_SCENE
 	$Inside_2D.show()
 
@@ -37,6 +39,7 @@ func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
 		current_state = State.SHIP_SCENE
 		spawn_orb_ship()
+		subtitle_controller.play_scene("scene2")
 
 func _on_Timer_RespawnOrbShip_timeout() -> void:
 	spawn_orb_ship()
@@ -57,3 +60,4 @@ func _physics_process(delta : float) -> void:
 
 func _ready() -> void:
 	$AnimationPlayer.play("intro")
+	$AnimationPlayer.seek(15.0)

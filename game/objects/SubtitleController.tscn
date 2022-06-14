@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/SubtitleController.gd" type="Script" id=1]
+
+[node name="SubtitleController" type="Node"]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer_UpdateSubtitle" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer_UpdateSubtitle" to="." method="_on_Timer_UpdateSubtitle_timeout"]

@@ -1,11 +1,11 @@
 T	Come. Let me show you something.
 S	What is it?
 T	There. See it?
-S	It's... some sort of orb.
+S	Yeah, it's... an orb.
 
-T	Are you familiar with Plato's Allegory of the Cave?
+T	Tell me, are you familiar with Plato's Allegory of the Cave?
 S	Seriously? Yes, I know about it.
-T	What is it?
+T	Why don't you explain it to me, then?
 S	What is this, a philosophy class?
 T	Humour me.
 S	*sigh* It describes a group of people who have been trapped in a cave since childhood. They're locked in place, unable to move or see anything except the shadows on a wall.
@@ -13,7 +13,7 @@ T	And where do the shadows come from?
 S	There's a fire behind them, and in between, more people, holding up puppets. The prisoners can't see anything except those shadows, so as far as they know, the shadows _are_ the puppets.
 T	That's about it, yes.
 S	I don't see what this has to do with... well, anything.
-T	Let's try something else.
+T	Bear with me. Let's try something else.
 
 T	What did you just pick up?
 S	A coin.
@@ -44,5 +44,5 @@ S	This sounds like you're trying to sell me on a conspiracy.
 T	Don't worry. The real world can't be described with a neat little allegory.
 S	If you said it could, I'd think you were the one holding up the puppets.
 T	Well, exactly. People have reasons for doing what they do, and it usually isn't inspired by shadows on the wall of a cave.
-S	But there are still plenty of would-be puppeteers.
+S	But there are still plenty of would-be puppeteers, right?
 T	Oh, sure. But who says they ever go outside?
