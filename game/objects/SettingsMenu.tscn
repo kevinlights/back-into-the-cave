@@ -1,0 +1,321 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/SimpleBox.tres" type="Theme" id=1]
+[ext_resource path="res://objects/SettingsMenu.gd" type="Script" id=2]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -80.0
+
+[node name="TabContainer" type="TabContainer" parent="Center"]
+margin_left = 400.0
+margin_top = 125.0
+margin_right = 880.0
+margin_bottom = 515.0
+rect_min_size = Vector2( 480, 390 )
+
+[node name="Graphics" type="Tabs" parent="Center/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 41.0
+margin_right = -3.0
+margin_bottom = -3.0
+
+[node name="Grid" type="GridContainer" parent="Center/TabContainer/Graphics"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -145.0
+margin_bottom = -28.0
+custom_constants/vseparation = 10
+columns = 2
+
+[node name="Label_Fullscreen" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 7.0
+margin_right = 310.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 310, 0 )
+text = "Fullscreen"
+
+[node name="CheckBox_Fullscreen" type="CheckBox" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_right = 428.0
+margin_bottom = 42.0
+
+[node name="Label_VSync" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 59.0
+margin_right = 310.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 310, 0 )
+text = "VSync"
+
+[node name="CheckBox_VSync" type="CheckBox" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_top = 52.0
+margin_right = 428.0
+margin_bottom = 94.0
+
+[node name="Label_StarDensity" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 111.0
+margin_right = 310.0
+margin_bottom = 139.0
+text = "Star Density"
+
+[node name="OptionButton_StarDensity" type="OptionButton" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_top = 104.0
+margin_right = 428.0
+margin_bottom = 146.0
+text = "Normal"
+items = [ "None", null, false, 0, null, "Sparse", null, false, 1, null, "Normal", null, false, 2, null, "Dense", null, false, 3, null, "Silly", null, false, 4, null ]
+selected = 2
+
+[node name="Label_GlowAmount" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 163.0
+margin_right = 310.0
+margin_bottom = 191.0
+text = "Glow Amount"
+
+[node name="OptionButton_GlowAmount" type="OptionButton" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_top = 156.0
+margin_right = 428.0
+margin_bottom = 198.0
+text = "Normal"
+items = [ "Off", null, false, 0, null, "Subtle", null, false, 1, null, "Normal", null, false, 2, null, "Intense", null, false, 3, null ]
+selected = 2
+
+[node name="Label_GlowQuality" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 215.0
+margin_right = 310.0
+margin_bottom = 243.0
+text = "Glow Quality"
+
+[node name="OptionButton_GlowQuality" type="OptionButton" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_top = 208.0
+margin_right = 428.0
+margin_bottom = 250.0
+text = "High"
+items = [ "Low", null, false, 0, null, "Medium", null, false, 1, null, "High", null, false, 2, null ]
+selected = 2
+
+[node name="Label_MSAA" type="Label" parent="Center/TabContainer/Graphics/Grid"]
+margin_top = 267.0
+margin_right = 310.0
+margin_bottom = 295.0
+text = "MSAA"
+
+[node name="OptionButton_MSAA" type="OptionButton" parent="Center/TabContainer/Graphics/Grid"]
+margin_left = 314.0
+margin_top = 260.0
+margin_right = 428.0
+margin_bottom = 302.0
+text = "Off"
+items = [ "Off", null, false, 0, null, "2x", null, false, 1, null, "4x", null, false, 2, null, "8x", null, false, 3, null, "16x", null, false, 4, null ]
+selected = 0
+
+[node name="Audio" type="Tabs" parent="Center/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 41.0
+margin_right = -3.0
+margin_bottom = -3.0
+
+[node name="Grid" type="GridContainer" parent="Center/TabContainer/Audio"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/vseparation = 10
+columns = 2
+
+[node name="Label_BGM" type="Label" parent="Center/TabContainer/Audio/Grid"]
+margin_right = 120.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 120, 0 )
+text = "Music"
+
+[node name="HSlider_BGM" type="HSlider" parent="Center/TabContainer/Audio/Grid"]
+margin_left = 124.0
+margin_right = 424.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 300, 0 )
+max_value = 1.0
+step = 0.02
+
+[node name="Label_SFX" type="Label" parent="Center/TabContainer/Audio/Grid"]
+margin_top = 38.0
+margin_right = 120.0
+margin_bottom = 66.0
+text = "SFX"
+
+[node name="HSlider_SFX" type="HSlider" parent="Center/TabContainer/Audio/Grid"]
+margin_left = 124.0
+margin_top = 38.0
+margin_right = 424.0
+margin_bottom = 60.0
+max_value = 1.0
+step = 0.02
+
+[node name="Label_VO" type="Label" parent="Center/TabContainer/Audio/Grid"]
+margin_top = 76.0
+margin_right = 120.0
+margin_bottom = 104.0
+text = "VO"
+
+[node name="HSlider_VO" type="HSlider" parent="Center/TabContainer/Audio/Grid"]
+margin_left = 124.0
+margin_top = 76.0
+margin_right = 424.0
+margin_bottom = 98.0
+max_value = 1.0
+step = 0.02
+
+[node name="Label_UI" type="Label" parent="Center/TabContainer/Audio/Grid"]
+margin_top = 114.0
+margin_right = 120.0
+margin_bottom = 142.0
+text = "UI"
+
+[node name="HSlider_UI" type="HSlider" parent="Center/TabContainer/Audio/Grid"]
+margin_left = 124.0
+margin_top = 114.0
+margin_right = 424.0
+margin_bottom = 136.0
+max_value = 1.0
+step = 0.02
+
+[node name="Label_Subtitles" type="Label" parent="Center/TabContainer/Audio/Grid"]
+margin_top = 159.0
+margin_right = 120.0
+margin_bottom = 187.0
+text = "Subtitles"
+
+[node name="CheckBox_Subtitles" type="CheckBox" parent="Center/TabContainer/Audio/Grid"]
+margin_left = 124.0
+margin_top = 152.0
+margin_right = 424.0
+margin_bottom = 194.0
+
+[node name="Controls" type="Tabs" parent="Center/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 41.0
+margin_right = -3.0
+margin_bottom = -3.0
+
+[node name="Grid" type="GridContainer" parent="Center/TabContainer/Controls"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+custom_constants/vseparation = 0
+columns = 2
+
+[node name="Label_Left" type="Label" parent="Center/TabContainer/Controls/Grid"]
+margin_top = 9.0
+margin_right = 320.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 320, 0 )
+text = "Run/Turn Left"
+
+[node name="Button_Left" type="Button" parent="Center/TabContainer/Controls/Grid"]
+margin_left = 324.0
+margin_right = 424.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 100, 0 )
+text = "Left"
+
+[node name="Label_Right" type="Label" parent="Center/TabContainer/Controls/Grid"]
+margin_top = 56.0
+margin_right = 320.0
+margin_bottom = 84.0
+text = "Run/Turn Right"
+
+[node name="Button_Right" type="Button" parent="Center/TabContainer/Controls/Grid"]
+margin_left = 324.0
+margin_top = 47.0
+margin_right = 424.0
+margin_bottom = 94.0
+text = "Right"
+
+[node name="Label_Forwards" type="Label" parent="Center/TabContainer/Controls/Grid"]
+margin_top = 103.0
+margin_right = 320.0
+margin_bottom = 131.0
+text = "Thrust Forwards"
+
+[node name="Button_Forwards" type="Button" parent="Center/TabContainer/Controls/Grid"]
+margin_left = 324.0
+margin_top = 94.0
+margin_right = 424.0
+margin_bottom = 141.0
+text = "Up"
+
+[node name="Label_Backwards" type="Label" parent="Center/TabContainer/Controls/Grid"]
+margin_top = 150.0
+margin_right = 320.0
+margin_bottom = 178.0
+text = "Brake"
+
+[node name="Button_Backwards" type="Button" parent="Center/TabContainer/Controls/Grid"]
+margin_left = 324.0
+margin_top = 141.0
+margin_right = 424.0
+margin_bottom = 188.0
+text = "Down"
+
+[node name="Label_Jump" type="Label" parent="Center/TabContainer/Controls/Grid"]
+margin_top = 197.0
+margin_right = 320.0
+margin_bottom = 225.0
+text = "Jump"
+
+[node name="Button_Jump" type="Button" parent="Center/TabContainer/Controls/Grid"]
+margin_left = 324.0
+margin_top = 188.0
+margin_right = 424.0
+margin_bottom = 235.0
+text = "X"
+
+[node name="Button_Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -33.5
+margin_top = -74.0
+margin_right = 33.5
+margin_bottom = -40.0
+text = "Back"
+
+[connection signal="toggled" from="Center/TabContainer/Graphics/Grid/CheckBox_Fullscreen" to="." method="_on_CheckBox_Fullscreen_toggled"]
+[connection signal="toggled" from="Center/TabContainer/Graphics/Grid/CheckBox_VSync" to="." method="_on_CheckBox_VSync_toggled"]
+[connection signal="item_selected" from="Center/TabContainer/Graphics/Grid/OptionButton_StarDensity" to="." method="_on_OptionButton_StarDensity_item_selected"]
+[connection signal="item_selected" from="Center/TabContainer/Graphics/Grid/OptionButton_GlowAmount" to="." method="_on_OptionButton_GlowAmount_item_selected"]
+[connection signal="item_selected" from="Center/TabContainer/Graphics/Grid/OptionButton_GlowQuality" to="." method="_on_OptionButton_GlowQuality_item_selected"]
+[connection signal="item_selected" from="Center/TabContainer/Graphics/Grid/OptionButton_MSAA" to="." method="_on_OptionButton_MSAA_item_selected"]
+[connection signal="value_changed" from="Center/TabContainer/Audio/Grid/HSlider_BGM" to="." method="_on_HSlider_BGM_value_changed"]
+[connection signal="value_changed" from="Center/TabContainer/Audio/Grid/HSlider_SFX" to="." method="_on_HSlider_SFX_value_changed"]
+[connection signal="value_changed" from="Center/TabContainer/Audio/Grid/HSlider_VO" to="." method="_on_HSlider_VO_value_changed"]
+[connection signal="value_changed" from="Center/TabContainer/Audio/Grid/HSlider_UI" to="." method="_on_HSlider_UI_value_changed"]
+[connection signal="toggled" from="Center/TabContainer/Audio/Grid/CheckBox_Subtitles" to="." method="_on_CheckBox_Subtitles_toggled"]
+[connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Left" to="." method="_on_Button_Left_pressed"]
+[connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Right" to="." method="_on_Button_Right_pressed"]
+[connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Forwards" to="." method="_on_Button_Forwards_pressed"]
+[connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Backwards" to="." method="_on_Button_Backwards_pressed"]
+[connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Jump" to="." method="_on_Button_Jump_pressed"]

@@ -31,6 +31,8 @@ func subtitle_is_current(subtitle : Dictionary) -> bool:
 	return point >= subtitle["start"] and point < subtitle["end"]
 
 func get_current_subtitle() -> String:
+	if Settings.subtitles == false:
+		return ""
 	if not current_scene in SCENE_AUDIO:
 		return ""
 	for subtitle in get_subtitles_for_scene(current_scene):

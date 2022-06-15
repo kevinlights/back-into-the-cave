@@ -9,6 +9,8 @@ onready var camera : Camera = $CameraArm/Camera
 onready var cave_scene : Node2D = $Viewport/CaveScene
 onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
+onready var particles_stars : Particles = $Particles_Stars
+onready var world_environment : WorldEnvironment = $WorldEnvironment
 onready var subtitle_controller : Node = $SubtitleController
 onready var music_controller : Node = $MusicController
 
@@ -17,6 +19,25 @@ enum State {INTRO, SHIP_SCENE, CAVE_SCENE}
 var current_state : int = State.INTRO
 var ship : Spatial
 onready var level : Spatial = $Level1
+
+func apply_graphics_settings() -> void:
+	world_environment.environment.glow_enabled = true if Settings.glow_amount > 0 else false
+	match Settings.glow_amount:
+		1: world_environment.environment.glow_intensity = 0.4
+		2: world_environment.environment.glow_intensity = 0.8
+		3: world_environment.environment.glow_intensity = 1.6
+	world_environment.environment.glow_bicubic_upscale = true if Settings.glow_quality >= 1 else false
+	world_environment.environment.glow_high_quality = true if Settings.glow_quality >= 2 else false
+
+func apply_star_quantity() -> void:
+	particles_stars.visible = Settings.star_density > 0
+	match Settings.star_density:
+		0: particles_stars.amount = 1
+		1: particles_stars.amount = 2500
+		2: particles_stars.amount = 5000
+		3: particles_stars.amount = 10000
+		4: particles_stars.amount = 50000
+	particles_stars.restart()
 
 func spawn_orb_ship() -> void:
 	ship_arm.rotation = level.spawn_point.rotation
@@ -60,7 +81,8 @@ func _physics_process(delta : float) -> void:
 		camera_arm.rotation.y = lerp_angle(camera_arm.rotation.y, player_rotate, CAMERA_MOVE_SPEED * delta)
 
 func _ready() -> void:
+	apply_graphics_settings()
+	apply_star_quantity()
 	yield(get_tree(), "idle_frame")
-	yield(get_tree().create_timer(3.0), "timeout")
 	music_controller.play_track("opening")
 	$AnimationPlayer.play("intro")
