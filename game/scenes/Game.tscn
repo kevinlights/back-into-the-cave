@@ -42,7 +42,7 @@ resource_local_to_scene = true
 flags_unshaded = true
 params_specular_mode = 4
 params_blend_mode = 1
-albedo_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+albedo_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 albedo_texture = SubResource( 13 )
 uv1_scale = Vector3( -1, 1, 1 )
 
@@ -170,6 +170,7 @@ render_target_v_flip = true
 
 [node name="Level1" type="Spatial" parent="."]
 transform = Transform( 1, 4.79474e-11, 0, -5.15072e-11, 1, 0, -1.45519e-11, -1.16415e-10, 1, 0, 0, 0 )
+visible = false
 script = ExtResource( 8 )
 
 [node name="FireRing1" parent="Level1" instance=ExtResource( 3 )]
@@ -204,7 +205,6 @@ skeleton = NodePath("../Orb")
 material/0 = SubResource( 4 )
 
 [node name="Inside_2D" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../Orb")
 material/0 = SubResource( 14 )

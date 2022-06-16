@@ -6,6 +6,9 @@ onready var settings_menu : Control = $SettingsMenu
 var active : bool = false
 
 func unpause() -> void:
+	vbox_menu.show()
+	settings_menu.hide()
+	settings_menu.active = false
 	get_tree().paused = false
 	active = false
 	hide()

@@ -60,8 +60,10 @@ func _on_Key_collector() -> void:
 
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
-		current_state = State.SHIP_SCENE
-		spawn_orb_ship()
+		#current_state = State.SHIP_SCENE
+		#spawn_orb_ship()
+		current_state = State.CAVE_SCENE
+		$Inside_2D.show()
 		subtitle_controller.play_scene("scene2")
 
 func _on_Timer_RespawnOrbShip_timeout() -> void:
@@ -92,3 +94,4 @@ func _ready() -> void:
 	yield(get_tree(), "idle_frame")
 	music_controller.play_track("opening")
 	$AnimationPlayer.play("intro")
+	$AnimationPlayer.seek(18.0)
