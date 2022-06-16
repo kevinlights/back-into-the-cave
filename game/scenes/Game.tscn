@@ -161,7 +161,7 @@ transform = Transform( 0.999999, -0.00100186, 0.000111644, 0.00100177, 0.999999,
 script = ExtResource( 4 )
 
 [node name="Viewport_CaveScene" type="Viewport" parent="."]
-size = Vector2( 256, 128 )
+size = Vector2( 1024, 512 )
 hdr = false
 usage = 0
 render_target_v_flip = true

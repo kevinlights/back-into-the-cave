@@ -44,3 +44,8 @@ position = Vector2( 184, 40 )
 
 [node name="Torch4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 216, 72 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
