@@ -7,6 +7,7 @@
 
 [resource]
 shader = ExtResource( 1 )
+shader_param/amount = 1.0
 shader_param/gradient = ExtResource( 4 )
 shader_param/clouds = ExtResource( 2 )
 shader_param/colour = ExtResource( 3 )

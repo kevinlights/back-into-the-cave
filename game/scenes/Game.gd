@@ -54,16 +54,15 @@ func _on_orb_ship_destroyed() -> void:
 	timer_respawn_orb_ship.start()
 
 func _on_Key_collector() -> void:
-	return
+	get_tree().call_group("fire_ring", "extinguish")
+	yield(get_tree().create_timer(1.0), "timeout")
 	current_state = State.CAVE_SCENE
 	$Inside_2D.show()
 
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
-		#current_state = State.SHIP_SCENE
-		#spawn_orb_ship()
-		current_state = State.CAVE_SCENE
-		$Inside_2D.show()
+		current_state = State.SHIP_SCENE
+		spawn_orb_ship()
 		subtitle_controller.play_scene("scene2")
 
 func _on_Timer_RespawnOrbShip_timeout() -> void:

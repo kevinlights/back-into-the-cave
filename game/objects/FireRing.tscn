@@ -47,4 +47,6 @@ shape = SubResource( 1 )
 transform = Transform( 0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, -0.707107, 0, 1, -4.37114e-08, -0.356028, 0.347579, 0.95 )
 shape = SubResource( 1 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_FireRing_body_entered"]
