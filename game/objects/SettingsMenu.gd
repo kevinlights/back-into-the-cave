@@ -22,6 +22,8 @@ var active : bool = true
 var rebinding : bool = false
 var rebinding_action : String
 
+signal closed
+
 func set_stuff() -> void:
 	checkbox_fullscreen.pressed = Settings.fullscreen
 	checkbox_vsync.pressed = Settings.vsync
@@ -124,6 +126,10 @@ func _on_Button_Jump_pressed() -> void:
 	button_jump.text = "..."
 	rebinding_action = "jump"
 	rebinding = true
+
+func _on_Button_Back_pressed() -> void:
+	active = false
+	emit_signal("closed")
 
 func _input(event : InputEvent) -> void:
 	if not active: return

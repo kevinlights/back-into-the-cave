@@ -11,6 +11,7 @@ onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
 onready var particles_stars : Particles = $Particles_Stars
 onready var world_environment : WorldEnvironment = $WorldEnvironment
+onready var pause_menu : Control = $CanvasLayer/PauseMenu
 onready var subtitle_controller : Node = $SubtitleController
 onready var music_controller : Node = $MusicController
 
@@ -65,6 +66,11 @@ func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 
 func _on_Timer_RespawnOrbShip_timeout() -> void:
 	spawn_orb_ship()
+
+func _input(event : InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		pause_menu.pause()
+		get_tree().set_input_as_handled()
 
 func _physics_process(delta : float) -> void:
 	if current_state == State.SHIP_SCENE and is_instance_valid(ship):

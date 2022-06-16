@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/SimpleBox.tres" type="Theme" id=1]
+[ext_resource path="res://objects/SettingsMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/PauseMenu.gd" type="Script" id=3]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Blackout" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="VBox_Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -90.5
+margin_right = 60.0
+margin_bottom = 90.5
+
+[node name="Button_Resume" type="Button" parent="VBox_Menu"]
+margin_right = 120.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 120, 0 )
+text = "Resume"
+
+[node name="Button_Settings" type="Button" parent="VBox_Menu"]
+margin_top = 67.0
+margin_right = 120.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 120, 0 )
+text = "Settings"
+
+[node name="Button_Exit" type="Button" parent="VBox_Menu"]
+margin_top = 134.0
+margin_right = 120.0
+margin_bottom = 181.0
+rect_min_size = Vector2( 120, 0 )
+text = "Exit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="pressed" from="VBox_Menu/Button_Resume" to="." method="_on_Button_Resume_pressed"]
+[connection signal="pressed" from="VBox_Menu/Button_Settings" to="." method="_on_Button_Settings_pressed"]
+[connection signal="pressed" from="VBox_Menu/Button_Exit" to="." method="_on_Button_Exit_pressed"]
+[connection signal="closed" from="SettingsMenu" to="." method="_on_SettingsMenu_closed"]

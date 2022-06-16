@@ -319,3 +319,4 @@ text = "Back"
 [connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Forwards" to="." method="_on_Button_Forwards_pressed"]
 [connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Backwards" to="." method="_on_Button_Backwards_pressed"]
 [connection signal="pressed" from="Center/TabContainer/Controls/Grid/Button_Jump" to="." method="_on_Button_Jump_pressed"]
+[connection signal="pressed" from="Button_Back" to="." method="_on_Button_Back_pressed"]

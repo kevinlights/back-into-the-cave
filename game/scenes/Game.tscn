@@ -13,7 +13,7 @@
 [ext_resource path="res://fonts/subtitles.tres" type="DynamicFont" id=11]
 [ext_resource path="res://objects/SubtitleController.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/MusicController.tscn" type="PackedScene" id=13]
-[ext_resource path="res://objects/SettingsMenu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/PauseMenu.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -264,7 +264,8 @@ custom_fonts/font = ExtResource( 11 )
 valign = 1
 autowrap = true
 
-[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource( 14 )]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 14 )]
+visible = false
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 256, 128 )
