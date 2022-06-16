@@ -6,7 +6,7 @@ const CAMERA_MOVE_SPEED : float = 3.0
 
 onready var camera_arm : Spatial = $CameraArm
 onready var camera : Camera = $CameraArm/Camera
-onready var cave_scene : Node2D = $Viewport/CaveScene
+onready var cave_scene : Node2D = $Viewport_CaveScene/CaveScene
 onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
 onready var particles_stars : Particles = $Particles_Stars
