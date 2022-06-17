@@ -94,3 +94,4 @@ func _ready() -> void:
 	yield(get_tree().create_timer(0.5), "timeout")
 	music_controller.play_track("opening")
 	$AnimationPlayer.play("intro")
+	$AnimationPlayer.seek(18.0)
