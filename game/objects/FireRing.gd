@@ -11,10 +11,12 @@ func ignite() -> void:
 	tween.interpolate_method(self, "set_fire_amount", 0.0, 1.0, 1.0)
 	tween.start()
 
-func extinguish() -> void:
+func disappear() -> void:
 	set_fire_amount(1.0)
 	tween.interpolate_method(self, "set_fire_amount", 1.0, 0.0, 1.0)
 	tween.start()
+	yield(tween, "tween_all_completed")
+	queue_free()
 
 func _on_FireRing_body_entered(body) -> void:
 	if body is OrbShip:

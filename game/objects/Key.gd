@@ -5,8 +5,6 @@ onready var tween : Tween = $Tween
 
 var collected : bool = false
 
-signal collector
-
 func respawn() -> void:
 	collected = false
 	tween.interpolate_property(self, "scale", null, Vector3.ONE, 0.5)
@@ -19,7 +17,7 @@ func _on_Key_body_entered(body) -> void:
 		collected = true
 		tween.interpolate_property(self, "scale", null, Vector3.ZERO, 0.5)
 		tween.start()
-		emit_signal("collector")
+		get_tree().call_group("game", "_on_key_collected")
 
 func _physics_process(delta : float) -> void:
 	rotate_x(delta * 0.5)

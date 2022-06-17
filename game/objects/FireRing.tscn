@@ -8,7 +8,7 @@
 radius = 0.03
 height = 0.5
 
-[node name="FireRing" type="Area" groups=["fire_ring"]]
+[node name="FireRing" type="Area" groups=["disappearer"]]
 script = ExtResource( 3 )
 
 [node name="Mesh" type="MeshInstance" parent="."]

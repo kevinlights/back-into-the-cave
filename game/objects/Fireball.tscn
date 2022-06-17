@@ -8,7 +8,7 @@
 [sub_resource type="SphereShape" id=4]
 radius = 0.08
 
-[node name="Fireball" type="Area"]
+[node name="Fireball" type="Area" groups=["disappearer"]]
 script = ExtResource( 6 )
 
 [node name="Fireball" type="MeshInstance" parent="."]

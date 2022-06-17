@@ -1,8 +1,14 @@
 extends Spatial
 
-const _OrbShip : PackedScene = preload("res://objects/OrbShip.tscn")
+const LEVELS : Array = [
+	preload("res://levels/Level1.tscn"),
+	preload("res://levels/Level2.tscn"),
+	preload("res://levels/Level3.tscn"),
+]
 
 const CAMERA_MOVE_SPEED : float = 3.0
+
+enum State {INTRO, SHIP_SCENE, CAVE_SCENE}
 
 onready var camera_arm : Spatial = $CameraArm
 onready var camera : Camera = $CameraArm/Camera
@@ -15,11 +21,12 @@ onready var pause_menu : Control = $CanvasLayer/PauseMenu
 onready var subtitle_controller : Node = $SubtitleController
 onready var music_controller : Node = $MusicController
 
-enum State {INTRO, SHIP_SCENE, CAVE_SCENE}
+var ship : Spatial
+var level : Spatial
 
 var current_state : int = State.INTRO
-var ship : Spatial
-onready var level : Spatial = $Level1
+var current_level : int = 0
+var keys_collected : int = 0
 
 func apply_graphics_settings() -> void:
 	world_environment.environment.glow_enabled = true if Settings.glow_amount > 0 else false
@@ -42,26 +49,44 @@ func apply_star_quantity() -> void:
 
 func spawn_orb_ship() -> void:
 	ship_arm.rotation = level.spawn_point.rotation
-	ship = _OrbShip.instance()
-	ship_arm.add_child(ship)
-	ship.translation.x = -1.1
-	ship.rotation_degrees.z = 90.0
-	ship_arm.ship = ship
+	ship = ship_arm.spawn_ship(level.spawn_point)
 	ship.connect("destroyed", self, "_on_orb_ship_destroyed")
+
+func spawn_level() -> void:
+	if is_instance_valid(level):
+		level.queue_free()
+	level = LEVELS[current_level].instance()
+	add_child(level)
+
+func restart_level() -> void:
+	get_tree().call_group("disappearer", "disappear")
+	yield(get_tree().create_timer(1.0), "timeout")
+	spawn_level()
+	spawn_orb_ship()
+
+func next_level() -> void:
+	get_tree().call_group("disappearer", "disappear")
+	yield(get_tree().create_timer(1.0), "timeout")
+	current_level += 1
+	spawn_level()
+	spawn_orb_ship()
 
 func _on_orb_ship_destroyed() -> void:
 	ship_arm.stop()
-	timer_respawn_orb_ship.start()
+	restart_level()
 
-func _on_Key_collector() -> void:
-	get_tree().call_group("fire_ring", "extinguish")
-	yield(get_tree().create_timer(1.0), "timeout")
-	current_state = State.CAVE_SCENE
-	$Inside_2D.show()
+func _on_key_collected() -> void:
+	keys_collected += 1
+	if keys_collected >= 3:
+		next_level()
+		keys_collected = 0
+	#current_state = State.CAVE_SCENE
+	#$Inside_2D.show()
 
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
 		current_state = State.SHIP_SCENE
+		spawn_level()
 		spawn_orb_ship()
 		subtitle_controller.play_scene("scene2")
 

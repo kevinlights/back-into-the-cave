@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/Key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Fireball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Level.gd" type="Script" id=5]
+
+[node name="Level3" type="Spatial"]
+transform = Transform( 1, 4.79474e-11, 0, -5.15072e-11, 1, 0, -1.45519e-11, -1.16415e-10, 1, 0, 0, 0 )
+script = ExtResource( 5 )
+
+[node name="Key1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 4.79545e-11, -7.27596e-12, -5.15072e-11, 1, -5.82077e-11, 7.27596e-12, 5.82077e-11, 1, -1.9245e-10, -1.1, -1.74623e-10 )
+
+[node name="Key2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 4.79545e-11, -7.27596e-12, -5.15072e-11, 1, -5.82077e-11, 7.27596e-12, 5.82077e-11, 1, 0, 1.1, 0 )
+
+[node name="Key3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 4.79545e-11, -7.27596e-12, -5.15072e-11, 1, -5.82077e-11, 7.27596e-12, 5.82077e-11, 1, 0, 0, -1.1 )
+
+[node name="SpawnPoint" type="Spatial" parent="."]
+transform = Transform( 0.789149, 0.0473672, 0.612372, -0.433013, 0.75, 0.5, -0.435596, -0.65974, 0.612372, 0, 0, 0 )
+
+[node name="Fireball1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.642788, -0.766045, 0, 0.663414, 0.556671, 0.5, -0.383022, -0.321394, 0.866026, 0, 0, 0 )
+
+[node name="Fireball2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.454874, -0.873983, 0.17101, 0.492404, -0.0868242, 0.866026, -0.742043, 0.478139, 0.469847, 0, 0, 0 )
+
+[node name="Fireball3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.984808, 0.173649, -2.80972e-08, -2.18557e-08, 3.78552e-08, 1, 0.173648, 0.984808, -3.34849e-08, 0, 0, 0 )
+
+[node name="Fireball4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.642788, -0.766045, 0, 0.766045, 0.642788, 0, 0, 0 )
+
+[node name="Fireball5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.503798, 0.859448, 0.0868241, -0.0868241, 0.150384, -0.984808, -0.859447, 0.488606, 0.150384, 0, 0, 0 )
+
+[node name="Fireball6" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.45477, 0.839912, -0.296198, 0.296198, -0.17101, -0.939693, -0.839912, -0.515077, -0.17101, 0, 0, 0 )

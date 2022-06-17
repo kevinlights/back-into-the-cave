@@ -1,5 +1,7 @@
 extends Spatial
 
+const _OrbShip : PackedScene = preload("res://objects/OrbShip.tscn")
+
 const ROTATE_INCR : float = 6.0
 const ROTATE_MAX : float = 3.0
 const THRUST_INCR : float = 3.0
@@ -10,6 +12,13 @@ var ship : Spatial
 
 var forwards_thrust : float = 0.0
 var turn_speed : float = 0.0
+
+func spawn_ship(spawn_point : Spatial) -> Spatial:
+	ship = _OrbShip.instance()
+	add_child(ship)
+	ship.translation.x = -1.1
+	ship.rotation_degrees.z = 90.0
+	return ship
 
 func stop() -> void:
 	forwards_thrust = 0.0
