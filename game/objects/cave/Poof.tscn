@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://objects/cave/SpriteParticle.gd" type="Script" id=1]
-[ext_resource path="res://sprites/dust.png" type="Texture" id=2]
+[ext_resource path="res://sprites/poof.png" type="Texture" id=2]
 
-[node name="Dust" type="Sprite"]
+[node name="Poof" type="Sprite"]
 texture = ExtResource( 2 )
 hframes = 5
 script = ExtResource( 1 )

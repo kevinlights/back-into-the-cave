@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sprites/twinkle.png" type="Texture" id=1]
-[ext_resource path="res://objects/cave/Twinkle.gd" type="Script" id=2]
+[ext_resource path="res://objects/cave/SpriteParticle.gd" type="Script" id=2]
 
 [node name="Twinkle" type="Sprite"]
 z_index = 5
 texture = ExtResource( 1 )
 hframes = 6
 script = ExtResource( 2 )
+numberOfFrames = 6
 
 [node name="Timer_NextFrame" type="Timer" parent="."]
 wait_time = 0.05

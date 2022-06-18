@@ -3,6 +3,7 @@ extends KinematicBody2D
 class_name CavePlayer
 
 const _Dust : PackedScene = preload("res://objects/cave/Dust.tscn")
+const _Poof : PackedScene = preload("res://objects/cave/Poof.tscn")
 
 const MOVE_SPEED : float = 44.0
 const HILL_CLIMB_SPEED : float = 20.0
@@ -19,6 +20,8 @@ onready var sprite_mirror_r : Sprite = $Sprite_MirrorR
 var velocity : Vector2 = Vector2.ZERO
 var anim_index : float = 0.0
 
+signal dead
+
 func do_the_dusty() -> void:
 	for dir in [Vector2.LEFT, Vector2.RIGHT]:
 		var dust : Sprite = _Dust.instance()
@@ -26,12 +29,24 @@ func do_the_dusty() -> void:
 		dust.global_position = self.global_position + Vector2(0, 3) + (dir * 4.0)
 		dust.velocity = dir * 16.0
 
+func poof() -> void:
+	for dir in range(0.0, 360.0, 45.0):
+		var poof : Sprite = _Poof.instance()
+		get_parent().add_child(poof)
+		poof.global_position = self.global_position
+		poof.velocity = Vector2.RIGHT.rotated(deg2rad(dir)) * 32.0
+
 func move(direction : Vector2, delta : float) -> void:
 	var collision : KinematicCollision2D = move_and_collide(MOVE_SPEED * direction * delta)
 	if collision != null and collision.normal.snapped(Vector2(0.25, 0.25)).y == -0.75:
 		position.y -= HILL_CLIMB_SPEED * delta
 		move_and_collide(HILL_CLIMB_SPEED * direction * delta)
 		velocity.y = 0.0
+
+func _on_Area_DeadlyFinder_body_entered(body) -> void:
+	poof()
+	emit_signal("dead")
+	queue_free()
 
 func _physics_process(delta : float) -> void:
 	var running : bool = false
@@ -62,7 +77,6 @@ func _physics_process(delta : float) -> void:
 			velocity = Vector2.ZERO
 		elif collision.normal.snapped(Vector2(0.25, 0.25)).y == -0.75:
 			velocity.y = 0.0
-	
 	
 	if Input.is_action_just_pressed("jump") and test_move(transform, Vector2.DOWN):
 		velocity = Vector2(0, -JUMP_SPEED)

@@ -1,9 +1,11 @@
 extends Sprite
 
+export (int) var numberOfFrames
+
 var velocity : Vector2
 
 func _on_Timer_NextFrame_timeout() -> void:
-	if frame == 5:
+	if frame == numberOfFrames - 1:
 		queue_free()
 	else:
 		frame += 1
