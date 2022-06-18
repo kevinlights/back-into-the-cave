@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/cave/Level2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/CavePlayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/CaveScene.gd" type="Script" id=3]
+[ext_resource path="res://objects/cave/CavePlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/cave/CaveScene.gd" type="Script" id=3]
 
 [node name="CaveScene" type="Node2D"]
 script = ExtResource( 3 )

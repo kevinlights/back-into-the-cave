@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://objects/Key.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/Fireball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/Level.gd" type="Script" id=5]
+[ext_resource path="res://scripts/SpaceLevel.gd" type="Script" id=1]
+[ext_resource path="res://objects/space/Fireball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/space/Key.tscn" type="PackedScene" id=3]
 
 [node name="Level1" type="Spatial"]
 transform = Transform( 1, 4.79474e-11, 0, -5.15072e-11, 1, 0, -1.45519e-11, -1.16415e-10, 1, 0, 0, 0 )
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 
-[node name="Key1" parent="." instance=ExtResource( 1 )]
+[node name="Key1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.707107, 0.707107, -4.63039e-11, -0.707107, 0.707107, -3.60142e-11, -7.9304e-11, 3.44003e-11, 1, -0.777817, -0.777817, -1.48435e-10 )
 
-[node name="Key2" parent="." instance=ExtResource( 1 )]
+[node name="Key2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67361, 0.55, -0.67361 )
 
-[node name="Key3" parent="." instance=ExtResource( 1 )]
+[node name="Key3" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856907, -0.439471, 0.531578 )
 
 [node name="SpawnPoint" type="Spatial" parent="."]
@@ -23,5 +23,5 @@ transform = Transform( 0.789149, 0.0473672, 0.612372, -0.433013, 0.75, 0.5, -0.4
 [node name="Position3D" type="Position3D" parent="SpawnPoint"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0 )
 
-[node name="Fireball" parent="." instance=ExtResource( 3 )]
+[node name="Fireball" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.642788, -0.766045, 0, 0.663414, 0.556671, 0.5, -0.383022, -0.321394, 0.866026, 0, 0, 0 )

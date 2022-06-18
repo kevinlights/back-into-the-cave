@@ -1,9 +1,9 @@
 extends Spatial
 
 const LEVELS : Array = [
-	preload("res://levels/Level1.tscn"),
-	preload("res://levels/Level2.tscn"),
-	preload("res://levels/Level3.tscn"),
+	preload("res://levels/space/Level1.tscn"),
+	preload("res://levels/space/Level2.tscn"),
+	preload("res://levels/space/Level3.tscn"),
 ]
 
 const CAMERA_MOVE_SPEED : float = 3.0

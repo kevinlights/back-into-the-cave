@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 class_name CavePlayer
 
-const _Dust : PackedScene = preload("res://objects/Dust.tscn")
+const _Dust : PackedScene = preload("res://objects/cave/Dust.tscn")
 
 const MOVE_SPEED : float = 44.0
 const HILL_CLIMB_SPEED : float = 20.0

@@ -1,6 +1,6 @@
 extends Spatial
 
-const _OrbShip : PackedScene = preload("res://objects/OrbShip.tscn")
+const _OrbShip : PackedScene = preload("res://objects/space/OrbShip.tscn")
 
 const ROTATE_INCR : float = 6.0
 const ROTATE_MAX : float = 3.0

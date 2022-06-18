@@ -2,7 +2,7 @@
 
 [ext_resource path="res://materials/FireballCore.material" type="Material" id=1]
 [ext_resource path="res://materials/FireballFlame.material" type="Material" id=2]
-[ext_resource path="res://objects/Fireball.gd" type="Script" id=6]
+[ext_resource path="res://objects/space/Fireball.gd" type="Script" id=6]
 [ext_resource path="res://meshes/fireball.mesh" type="ArrayMesh" id=7]
 
 [sub_resource type="SphereShape" id=4]

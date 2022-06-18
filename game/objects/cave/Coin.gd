@@ -1,6 +1,6 @@
 extends Area2D
 
-const _Twinkle : PackedScene = preload("res://objects/Twinkle.tscn")
+const _Twinkle : PackedScene = preload("res://objects/cave/Twinkle.tscn")
 
 onready var sprite : Sprite = $Sprite
 onready var timer_next_frame : Timer = $Timer_NextFrame

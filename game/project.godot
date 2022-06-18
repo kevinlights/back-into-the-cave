@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "CavePlayer",
 "language": "GDScript",
-"path": "res://objects/CavePlayer.gd"
+"path": "res://objects/cave/CavePlayer.gd"
 }, {
 "base": "Spatial",
 "class": "OrbShip",
 "language": "GDScript",
-"path": "res://objects/OrbShip.gd"
+"path": "res://objects/space/OrbShip.gd"
 } ]
 _global_script_class_icons={
 "CavePlayer": "",

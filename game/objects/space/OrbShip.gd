@@ -2,7 +2,7 @@ extends Spatial
 
 class_name OrbShip
 
-const _Explosion : PackedScene = preload("res://objects/Explosion.tscn")
+const _Explosion : PackedScene = preload("res://objects/space/Explosion.tscn")
 
 onready var mesh : MeshInstance = $Mesh
 onready var thruster : Spatial = $Mesh/Thruster

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://meshes/key.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://objects/Key.gd" type="Script" id=2]
+[ext_resource path="res://objects/space/Key.gd" type="Script" id=2]
 [ext_resource path="res://textures/sparkle.png" type="Texture" id=3]
 
 [sub_resource type="SphereShape" id=2]
