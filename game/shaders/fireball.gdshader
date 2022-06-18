@@ -4,6 +4,7 @@ render_mode blend_add, cull_disabled;
 uniform sampler2D gradient;
 uniform sampler2D fire;
 uniform sampler2D colour;
+uniform float amount;
 
 void fragment() {
 	ALBEDO = vec3(0.0, 0.0, 0.0);
@@ -13,5 +14,5 @@ void fragment() {
 	float b = texture(fire, uv_b).r;
 	float c = (a * a) * b;
 	vec3 v = texture(colour, vec2(1.0 - c, 0.0)).rgb;
-	EMISSION.rgb = v * 2.0;
+	EMISSION.rgb = v * 2.0 * amount;
 }

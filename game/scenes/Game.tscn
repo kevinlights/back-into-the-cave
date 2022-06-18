@@ -121,6 +121,7 @@ skeleton = NodePath("../Orb")
 material/0 = SubResource( 4 )
 
 [node name="Inside_2D" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../Orb")
 material/0 = SubResource( 18 )

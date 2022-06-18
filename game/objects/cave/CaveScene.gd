@@ -14,8 +14,11 @@ onready var tween : Tween = $Tween
 var level : Node2D
 
 var current_level : int = 0
+var stop_on_level : int = 3
 var coins_collected : int = 0
 var player_pos : Vector2
+
+signal last_level_in_batch_finished
 
 func get_player_pos() -> Vector2:
 	return level.player.position / WORLD_SIZE
@@ -38,7 +41,10 @@ func spawn_level() -> void:
 
 func next_level() -> void:
 	current_level += 1
-	spawn_level()
+	if current_level >= stop_on_level:
+		emit_signal("last_level_in_batch_finished")
+	else:
+		spawn_level()
 
 func on_level_completed() -> void:
 	fade_out()

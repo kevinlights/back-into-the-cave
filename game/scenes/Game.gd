@@ -26,6 +26,7 @@ var level : Spatial
 
 var current_state : int = State.INTRO
 var current_level : int = 0
+var stop_on_level : int = 3
 var keys_collected : int = 0
 
 func apply_graphics_settings() -> void:
@@ -58,20 +59,27 @@ func spawn_level() -> void:
 	level = LEVELS[current_level].instance()
 	add_child(level)
 
-func restart_level() -> void:
-	get_tree().call_group("disappearer", "disappear")
-	yield(get_tree().create_timer(1.0), "timeout")
+func start_level() -> void:
 	keys_collected = 0
 	spawn_level()
 	spawn_orb_ship()
 
+func restart_level() -> void:
+	get_tree().call_group("disappearer", "disappear")
+	yield(get_tree().create_timer(1.5), "timeout")
+	start_level()
+
 func next_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
-	yield(get_tree().create_timer(1.0), "timeout")
+	yield(get_tree().create_timer(1.5), "timeout")
 	current_level += 1
-	keys_collected = 0
-	spawn_level()
-	spawn_orb_ship()
+	if current_level != stop_on_level:
+		start_level()
+	else:
+		if current_level == 3:
+			level.queue_free()
+			current_state = State.CAVE_SCENE
+			$Inside_2D.show()
 
 func _on_orb_ship_destroyed() -> void:
 	ship_arm.stop()
@@ -85,9 +93,6 @@ func _on_key_collected() -> void:
 
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
-		current_state = State.CAVE_SCENE
-		$Inside_2D.show()
-		return
 		current_state = State.SHIP_SCENE
 		spawn_level()
 		spawn_orb_ship()

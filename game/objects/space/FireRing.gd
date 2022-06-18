@@ -8,7 +8,7 @@ func set_fire_amount(amount : float) -> void:
 
 func ignite() -> void:
 	set_fire_amount(0.0)
-	tween.interpolate_method(self, "set_fire_amount", 0.0, 1.0, 1.0)
+	tween.interpolate_method(self, "set_fire_amount", 0.0, 1.0, 0.5)
 	tween.start()
 
 func disappear() -> void:
@@ -21,3 +21,6 @@ func disappear() -> void:
 func _on_FireRing_body_entered(body) -> void:
 	if body is OrbShip:
 		body.get_hit()
+
+func _ready() -> void:
+	ignite()
