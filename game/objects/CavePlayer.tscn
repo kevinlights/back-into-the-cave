@@ -11,14 +11,20 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 0, -1 )
+hframes = 4
 
 [node name="Sprite_MirrorL" type="Sprite" parent="."]
-position = Vector2( -256, 0 )
+position = Vector2( -320, 0 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -1 )
+hframes = 4
 
 [node name="Sprite_MirrorR" type="Sprite" parent="."]
-position = Vector2( 256, 0 )
+position = Vector2( 320, 0 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -1 )
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )

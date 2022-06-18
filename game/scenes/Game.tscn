@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://textures/skybox.jpg" type="Texture" id=1]
 [ext_resource path="res://textures/dot.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://textures/logo.png" type="Texture" id=5]
 [ext_resource path="res://textures/jg.png" type="Texture" id=6]
 [ext_resource path="res://objects/CaveScene.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shaders/cave.gdshader" type="Shader" id=8]
 [ext_resource path="res://objects/ShipArm.tscn" type="PackedScene" id=9]
 [ext_resource path="res://fonts/subtitles.tres" type="DynamicFont" id=11]
 [ext_resource path="res://objects/SubtitleController.tscn" type="PackedScene" id=12]
@@ -21,7 +22,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 metallic_specular = 0.0
 roughness = 0.0
 
-[sub_resource type="SphereMesh" id=3]
+[sub_resource type="SphereMesh" id=16]
 flip_faces = true
 radius = 0.99
 height = 1.98
@@ -31,18 +32,19 @@ albedo_color = Color( 0, 0, 0, 1 )
 metallic_specular = 1.0
 roughness = 0.0
 
-[sub_resource type="ViewportTexture" id=13]
+[sub_resource type="SphereMesh" id=3]
+flip_faces = true
+radius = 0.98
+height = 1.98
+
+[sub_resource type="ViewportTexture" id=19]
 flags = 2
 viewport_path = NodePath("Viewport_CaveScene")
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="ShaderMaterial" id=18]
 resource_local_to_scene = true
-flags_unshaded = true
-params_specular_mode = 4
-params_blend_mode = 1
-albedo_color = Color( 0.752941, 0.752941, 0.752941, 1 )
-albedo_texture = SubResource( 13 )
-uv1_scale = Vector3( -1, 1, 1 )
+shader = ExtResource( 8 )
+shader_param/world = SubResource( 19 )
 
 [sub_resource type="Curve" id=10]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.135739, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.513746, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -100,7 +102,7 @@ transform = Transform( 0.999999, -0.00100186, 0.000111644, 0.00100177, 0.999999,
 script = ExtResource( 4 )
 
 [node name="Viewport_CaveScene" type="Viewport" parent="."]
-size = Vector2( 1024, 512 )
+size = Vector2( 1280, 720 )
 hdr = false
 usage = 0
 render_target_v_flip = true
@@ -114,15 +116,14 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Inside" type="MeshInstance" parent="."]
-mesh = SubResource( 3 )
+mesh = SubResource( 16 )
 skeleton = NodePath("../Orb")
 material/0 = SubResource( 4 )
 
 [node name="Inside_2D" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../Orb")
-material/0 = SubResource( 14 )
+material/0 = SubResource( 18 )
 
 [node name="Particles_Stars" type="Particles" parent="."]
 emitting = false

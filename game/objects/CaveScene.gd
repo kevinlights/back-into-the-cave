@@ -1,6 +1,6 @@
 extends Node2D
 
-const WORLD_SIZE : Vector2 = Vector2(256, 128)
+const WORLD_SIZE : Vector2 = Vector2(320, 180)
 
 onready var player : KinematicBody2D = $Player
 

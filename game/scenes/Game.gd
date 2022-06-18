@@ -61,6 +61,7 @@ func spawn_level() -> void:
 func restart_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
 	yield(get_tree().create_timer(1.0), "timeout")
+	keys_collected = 0
 	spawn_level()
 	spawn_orb_ship()
 
@@ -68,6 +69,7 @@ func next_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
 	yield(get_tree().create_timer(1.0), "timeout")
 	current_level += 1
+	keys_collected = 0
 	spawn_level()
 	spawn_orb_ship()
 
@@ -80,11 +82,12 @@ func _on_key_collected() -> void:
 	if keys_collected >= 3:
 		next_level()
 		keys_collected = 0
-	#current_state = State.CAVE_SCENE
-	#$Inside_2D.show()
 
 func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 	if anim_name == "intro":
+		current_state = State.CAVE_SCENE
+		$Inside_2D.show()
+		return
 		current_state = State.SHIP_SCENE
 		spawn_level()
 		spawn_orb_ship()
