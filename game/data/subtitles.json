@@ -23,136 +23,327 @@
 	],
 	"scene2": [
 		{
-			"start": 0.311996,
-			"end": 4.778981,
+			"start": 0.846845,
+			"end": 5.313830,
 			"line": "Tell me: are you familiar with Plato's Allegory of the Cave?"
 		},
 		{
-			"start": 4.932502,
-			"end": 7.916270,
+			"start": 5.467352,
+			"end": 8.451119,
 			"line": "Seriously? Yes, I know about it."
 		},
 		{
-			"start": 7.948460,
-			"end": 10.122525,
+			"start": 8.483309,
+			"end": 10.657374,
 			"line": "Why don't you explain it to me, then?"
 		},
 		{
-			"start": 10.122525,
-			"end": 12.365922,
+			"start": 10.657374,
+			"end": 12.900771,
 			"line": "What is this, a philosophy class?"
 		},
 		{
-			"start": 13.465335,
-			"end": 14.366655,
+			"start": 14.000184,
+			"end": 14.901505,
 			"line": "Humour me."
 		},
 		{
-			"start": 15.639399,
-			"end": 19.462584,
-			"line": "It describes a group of people who have been trapped in a cave since childhood."
+			"start": 16.174249,
+			"end": 17.555944,
+			"line": "It describes a group of people"
 		},
 		{
-			"start": 19.531916,
-			"end": 22.265592,
+			"start": 17.555944,
+			"end": 20.066766,
+			"line": "who have been trapped in a cave since childhood."
+		},
+		{
+			"start": 20.066766,
+			"end": 22.800442,
 			"line": "They're locked in place, unable to move or see anything"
 		},
 		{
-			"start": 22.265592,
-			"end": 23.563098,
+			"start": 22.800442,
+			"end": 24.097947,
 			"line": "except the shadows on a wall."
 		},
 		{
-			"start": 23.686906,
-			"end": 25.662878,
+			"start": 24.221755,
+			"end": 26.197727,
 			"line": "And where do the shadows come from?"
 		},
 		{
-			"start": 26.014492,
-			"end": 28.129129,
+			"start": 26.549342,
+			"end": 28.663979,
 			"line": "There's a fire behind them, and in between,"
 		},
 		{
-			"start": 28.129129,
-			"end": 30.189290,
+			"start": 28.663979,
+			"end": 30.724140,
 			"line": "more people, holding up puppets."
 		},
 		{
-			"start": 30.496334,
-			"end": 33.769812,
+			"start": 31.031183,
+			"end": 34.304661,
 			"line": "The prisoners can't see anything except those shadows,"
 		},
 		{
-			"start": 33.769812,
-			"end": 37.424617,
+			"start": 34.304661,
+			"end": 37.959467,
 			"line": "so as far as they know, the shadows ARE the puppets."
 		},
 		{
-			"start": 37.716804,
-			"end": 39.336210,
+			"start": 38.251653,
+			"end": 39.871059,
 			"line": "That's about it, yes."
 		},
 		{
-			"start": 39.851250,
-			"end": 41.416180,
+			"start": 40.386100,
+			"end": 41.951030,
 			"line": "I don't see what this has to do with..."
 		},
 		{
-			"start": 41.723224,
-			"end": 43.124728,
+			"start": 42.258073,
+			"end": 43.659578,
 			"line": "well, anything."
 		},
 		{
-			"start": 43.293106,
-			"end": 45.957450,
+			"start": 43.827956,
+			"end": 46.492300,
 			"line": "Bear with me. Let's try something else."
 		}
 	],
 	"scene3": [
 		{
-			"start": 0.302091,
-			"end": 1.446075,
+			"start": 0.544754,
+			"end": 1.688738,
 			"line": "What did you just pick up?"
 		},
 		{
-			"start": 1.693691,
-			"end": 2.280539,
+			"start": 1.936354,
+			"end": 2.523203,
 			"line": "A coin."
 		},
 		{
-			"start": 2.369681,
-			"end": 4.580269,
-			"line": "Really? It was bright yellow."
+			"start": 2.612344,
+			"end": 6.066581,
+			"line": "Really? It was bright yellow. It had jagged edges."
 		},
 		{
-			"start": 4.580888,
-			"end": 5.868489,
-			"line": "It had jagged edges."
-		},
-		{
-			"start": 5.975892,
-			"end": 7.969198,
+			"start": 6.218556,
+			"end": 8.211861,
 			"line": "It was a sprite. It's pixel art."
 		},
 		{
-			"start": 8.022745,
-			"end": 10.647470,
+			"start": 8.265408,
+			"end": 10.890133,
 			"line": "So coins are bright yellow, and have jagged edges?"
 		},
 		{
-			"start": 10.647470,
-			"end": 12.952771,
+			"start": 10.890133,
+			"end": 13.195434,
 			"line": "Well, no, it was a representation."
 		},
 		{
-			"start": 12.952771,
-			"end": 14.242848,
+			"start": 13.195434,
+			"end": 14.485511,
 			"line": "But you said it was a coin."
 		},
 		{
-			"start": 14.242848,
-			"end": 16.303009,
+			"start": 14.485511,
+			"end": 16.545672,
 			"line": "Because it was SUPPOSED to be a coin."
+		}
+	],
+	"scene4": [
+		{
+			"start": 0.084189,
+			"end": 1.812546,
+			"line": "Where are you going with all of this?"
+		},
+		{
+			"start": 2.013115,
+			"end": 7.581989,
+			"line": "If we were to apply the Allegory of the Cave to what we're doing right now,"
+		},
+		{
+			"start": 7.577036,
+			"end": 9.250918,
+			"line": "which role would you be?"
+		},
+		{
+			"start": 9.800624,
+			"end": 12.469920,
+			"line": "I suppose I'd be one of the prisoners."
+		},
+		{
+			"start": 12.596204,
+			"end": 13.849139,
+			"line": "And the sprites?"
+		},
+		{
+			"start": 13.871424,
+			"end": 15.891967,
+			"line": "They'd be the representations."
+		},
+		{
+			"start": 15.891967,
+			"end": 19.640867,
+			"line": "But I know that they're not reality, so the allegory doesn't apply."
+		},
+		{
+			"start": 19.856293,
+			"end": 20.992848,
+			"line": "Why shouldn't it?"
+		},
+		{
+			"start": 21.047324,
+			"end": 25.118124,
+			"line": "Well, the whole point of the scenario is that the prisoners are unaware"
+		},
+		{
+			"start": 25.118124,
+			"end": 26.940574,
+			"line": "of anything outside of the cave."
+		},
+		{
+			"start": 27.252570,
+			"end": 29.169114,
+			"line": "If they knew about the puppets behind them,"
+		},
+		{
+			"start": 29.169114,
+			"end": 31.115373,
+			"line": "they wouldn't be fooled by the shadows."
+		},
+		{
+			"start": 31.382797,
+			"end": 34.388851,
+			"line": "Well, perhaps they don't need to be fooled."
+		}
+	],
+	"scene5": [
+		{
+			"start": 0.529897,
+			"end": 2.649487,
+			"line": "Come on, then. What's your point?"
+		},
+		{
+			"start": 2.807961,
+			"end": 5.066215,
+			"line": "My point is that there could be people"
+		},
+		{
+			"start": 5.066215,
+			"end": 8.136648,
+			"line": "looking at those shadows other than the prisoners."
+		},
+		{
+			"start": 8.136648,
+			"end": 10.612803,
+			"line": "People who have gone back into the cave."
+		},
+		{
+			"start": 10.825753,
+			"end": 13.663427,
+			"line": "But they would know that they were just looking at shadows."
+		},
+		{
+			"start": 13.663427,
+			"end": 16.491197,
+			"line": "You're talking about people accepting a comfortable lie."
+		},
+		{
+			"start": 16.753670,
+			"end": 19.992481,
+			"line": "Indeed. The necessary conceit is that for those people,"
+		},
+		{
+			"start": 19.992481,
+			"end": 23.622525,
+			"line": "the shadows and the puppets, for all intents and purposes,"
+		},
+		{
+			"start": 23.622525,
+			"end": 25.851066,
+			"line": "are one and the same."
+		},
+		{
+			"start": 26.346297,
+			"end": 28.609503,
+			"line": "The puppets, just as the shadows,"
+		},
+		{
+			"start": 28.609503,
+			"end": 30.535952,
+			"line": "are untouchable and immutable."
+		},
+		{
+			"start": 30.937089,
+			"end": 32.239547,
+			"line": "But of the two,"
+		},
+		{
+			"start": 32.239547,
+			"end": 34.542372,
+			"line": "one may be more pleasing to the eye."
+		},
+		{
+			"start": 34.854368,
+			"end": 38.509174,
+			"line": "You're saying that if they think they can't change reality,"
+		},
+		{
+			"start": 38.509174,
+			"end": 40.569335,
+			"line": "they might as well accept the illusion?"
+		},
+		{
+			"start": 40.782285,
+			"end": 42.396738,
+			"line": "Precisely."
+		}
+	],
+	"scene6": [
+		{
+			"start": 0.158474,
+			"end": 2.887198,
+			"line": "This sounds like you're trying to sell me on a conspiracy."
+		},
+		{
+			"start": 3.169479,
+			"end": 7.884080,
+			"line": "Don't worry. The real world can't be described with a neat little allegory."
+		},
+		{
+			"start": 8.136648,
+			"end": 12.024212,
+			"line": "If you said it could, I'd think you were the one holding up the puppets."
+		},
+		{
+			"start": 12.266875,
+			"end": 13.911043,
+			"line": "Well, exactly."
+		},
+		{
+			"start": 13.911043,
+			"end": 17.704513,
+			"line": "People have reasons for doing what they do, and it usually"
+		},
+		{
+			"start": 17.704513,
+			"end": 20.955706,
+			"line": "isn't inspired by shadows on the wall of a cave."
+		},
+		{
+			"start": 21.237988,
+			"end": 24.060805,
+			"line": "But there are still plenty of would-be puppeteers, right?"
+		},
+		{
+			"start": 24.271133,
+			"end": 28.928927,
+			"line": "Oh, sure. But who says they ever go outside?"
 		}
 	]
 }
