@@ -4,7 +4,7 @@ class_name CavePlayer
 
 const _Dust : PackedScene = preload("res://objects/Dust.tscn")
 
-const MOVE_SPEED : float = 40.0
+const MOVE_SPEED : float = 44.0
 const HILL_CLIMB_SPEED : float = 20.0
 const JUMP_SPEED : float = 128.0
 const FALL_INCR : float = 386.0
@@ -48,9 +48,9 @@ func _physics_process(delta : float) -> void:
 	velocity.y = clamp(velocity.y, -JUMP_SPEED, MAX_FALL_SPEED)
 	
 	anim_index += ANIM_SPEED * delta
-	sprite.frame = 0 if not running else wrapi(anim_index, 1, 3)
+	sprite.frame = 0 if not running else wrapi(anim_index, 1, 5)
 	if not test_move(transform, Vector2.DOWN):
-		sprite.frame = 3
+		sprite.frame = 5
 	
 	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision != null:
@@ -66,7 +66,7 @@ func _physics_process(delta : float) -> void:
 	
 	if Input.is_action_just_pressed("jump") and test_move(transform, Vector2.DOWN):
 		velocity = Vector2(0, -JUMP_SPEED)
-		sprite.frame = 3
+		sprite.frame = 5
 		position.y -= 1.0
 	
 	sprite_mirror_l.flip_h = sprite.flip_h

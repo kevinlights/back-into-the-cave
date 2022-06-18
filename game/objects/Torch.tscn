@@ -4,6 +4,7 @@
 [ext_resource path="res://objects/Torch.gd" type="Script" id=2]
 
 [node name="Torch" type="Sprite"]
+z_index = -5
 texture = ExtResource( 1 )
 centered = false
 hframes = 4
