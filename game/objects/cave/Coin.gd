@@ -15,6 +15,7 @@ func _on_Coin_body_entered(body) -> void:
 			twinkle.global_position = self.global_position + Vector2(4, 4)
 			twinkle.velocity = Vector2.RIGHT.rotated(deg2rad(dir)) * 32.0
 		emit_signal("collected")
+		get_tree().call_group("cave_controller", "play_coin_conversation")
 		queue_free()
 
 func _on_Timer_NextFrame_timeout() -> void:

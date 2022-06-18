@@ -1,94 +1,158 @@
 {
-	"scene2": [
+	"scene1": [
 		{
-			"start": 0.098213,
-			"end": 3.994005,
-			"line": "Tell me, are you familiar with Plato's Allegory of the Cave?"
+			"start": 0.049523,
+			"end": 3.674615,
+			"line": "Come, over here. Let me show you something."
 		},
 		{
-			"start": 4.241356,
-			"end": 6.874926,
+			"start": 4.011372,
+			"end": 4.660125,
+			"line": "What is it?"
+		},
+		{
+			"start": 5.071167,
+			"end": 6.452862,
+			"line": "There. See it?"
+		},
+		{
+			"start": 6.737620,
+			"end": 8.785400,
+			"line": "Yeah. It's... an orb."
+		}
+	],
+	"scene2": [
+		{
+			"start": 0.311996,
+			"end": 4.778981,
+			"line": "Tell me: are you familiar with Plato's Allegory of the Cave?"
+		},
+		{
+			"start": 4.932502,
+			"end": 7.916270,
 			"line": "Seriously? Yes, I know about it."
 		},
 		{
-			"start": 7.107728,
-			"end": 9.559421,
+			"start": 7.948460,
+			"end": 10.122525,
 			"line": "Why don't you explain it to me, then?"
 		},
 		{
-			"start": 9.712197,
-			"end": 12.007476,
+			"start": 10.122525,
+			"end": 12.365922,
 			"line": "What is this, a philosophy class?"
 		},
 		{
-			"start": 12.16389,
-			"end": 13.084184,
+			"start": 13.465335,
+			"end": 14.366655,
 			"line": "Humour me."
 		},
 		{
-			"start": 13.527972,
-			"end": 14.942961,
-			"line": "It describes a group of people"
+			"start": 15.639399,
+			"end": 19.462584,
+			"line": "It describes a group of people who have been trapped in a cave since childhood."
 		},
 		{
-			"start": 15.015711,
-			"end": 17.249153,
-			"line": "who have been trapped in a cave since childhood."
+			"start": 19.531916,
+			"end": 22.265592,
+			"line": "They're locked in place, unable to move or see anything"
 		},
 		{
-			"start": 17.765682,
-			"end": 18.893315,
-			"line": "They're locked in place,"
+			"start": 22.265592,
+			"end": 23.563098,
+			"line": "except the shadows on a wall."
 		},
 		{
-			"start": 19.060641,
-			"end": 22.479916,
-			"line": "unable to move or see anything except the shadows on a wall."
-		},
-		{
-			"start": 22.565408,
-			"end": 24.706083,
+			"start": 23.686906,
+			"end": 25.662878,
 			"line": "And where do the shadows come from?"
 		},
 		{
-			"start": 24.940691,
-			"end": 27.186876,
+			"start": 26.014492,
+			"end": 28.129129,
 			"line": "There's a fire behind them, and in between,"
 		},
 		{
-			"start": 27.354202,
-			"end": 29.202066,
+			"start": 28.129129,
+			"end": 30.189290,
 			"line": "more people, holding up puppets."
 		},
 		{
-			"start": 29.653119,
-			"end": 32.472203,
+			"start": 30.496334,
+			"end": 33.769812,
 			"line": "The prisoners can't see anything except those shadows,"
 		},
 		{
-			"start": 32.668629,
-			"end": 33.949039,
-			"line": "so as far as they know,"
+			"start": 33.769812,
+			"end": 37.424617,
+			"line": "so as far as they know, the shadows ARE the puppets."
 		},
 		{
-			"start": 34.15274,
-			"end": 36.888161,
-			"line": "the shadows *are* the puppets."
-		},
-		{
-			"start": 37.13915,
-			"end": 38.812412,
+			"start": 37.716804,
+			"end": 39.336210,
 			"line": "That's about it, yes."
 		},
 		{
-			"start": 39.156168,
-			"end": 42.602715,
-			"line": "I don't see what this has to do with... well, anything."
+			"start": 39.851250,
+			"end": 41.416180,
+			"line": "I don't see what this has to do with..."
 		},
 		{
-			"start": 42.899183,
-			"end": 45.956515,
+			"start": 41.723224,
+			"end": 43.124728,
+			"line": "well, anything."
+		},
+		{
+			"start": 43.293106,
+			"end": 45.957450,
 			"line": "Bear with me. Let's try something else."
+		}
+	],
+	"scene3": [
+		{
+			"start": 0.302091,
+			"end": 1.446075,
+			"line": "What did you just pick up?"
+		},
+		{
+			"start": 1.693691,
+			"end": 2.280539,
+			"line": "A coin."
+		},
+		{
+			"start": 2.369681,
+			"end": 4.580269,
+			"line": "Really? It was bright yellow."
+		},
+		{
+			"start": 4.580888,
+			"end": 5.868489,
+			"line": "It had jagged edges."
+		},
+		{
+			"start": 5.975892,
+			"end": 7.969198,
+			"line": "It was a sprite. It's pixel art."
+		},
+		{
+			"start": 8.022745,
+			"end": 10.647470,
+			"line": "So coins are bright yellow, and have jagged edges?"
+		},
+		{
+			"start": 10.647470,
+			"end": 12.952771,
+			"line": "Well, no, it was a representation."
+		},
+		{
+			"start": 12.952771,
+			"end": 14.242848,
+			"line": "But you said it was a coin."
+		},
+		{
+			"start": 14.242848,
+			"end": 16.303009,
+			"line": "Because it was SUPPOSED to be a coin."
 		}
 	]
 }

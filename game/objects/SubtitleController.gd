@@ -3,7 +3,9 @@ extends Node
 const SUBTITLES_PATH : String = "res://data/subtitles.json"
 
 const SCENE_AUDIO : Dictionary = {
-	"scene2": preload("res://sounds/vo/scene2.ogg")
+	"scene1": preload("res://sounds/vo/scene1.ogg"),
+	"scene2": preload("res://sounds/vo/scene2.ogg"),
+	"scene3": preload("res://sounds/vo/scene3.ogg")
 }
 
 export (NodePath) var path_label_subtitle

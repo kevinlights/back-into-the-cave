@@ -2,7 +2,7 @@
 
 [ext_resource path="res://objects/cave/CaveScene.gd" type="Script" id=3]
 
-[node name="CaveScene" type="Node2D"]
+[node name="CaveScene" type="Node2D" groups=["cave_controller"]]
 script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

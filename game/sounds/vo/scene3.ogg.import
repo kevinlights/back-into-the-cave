@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scene3.ogg-7518be9b44857eb25b0452c907db4129.oggstr"
+
+[deps]
+
+source_file="res://sounds/vo/scene3.ogg"
+dest_files=[ "res://.import/scene3.ogg-7518be9b44857eb25b0452c907db4129.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

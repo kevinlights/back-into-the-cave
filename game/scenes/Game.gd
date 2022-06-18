@@ -142,4 +142,3 @@ func _ready() -> void:
 	yield(get_tree().create_timer(0.5), "timeout")
 	music_controller.play_track("opening")
 	anim_player.play("intro")
-	anim_player.seek(18.0)

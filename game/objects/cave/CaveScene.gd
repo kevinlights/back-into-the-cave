@@ -8,6 +8,9 @@ const LEVELS : Array = [
 
 const WORLD_SIZE : Vector2 = Vector2(320, 180)
 
+export (NodePath) var path_subtitle_controller
+onready var subtitle_controller : Node = get_node(path_subtitle_controller)
+
 onready var blackout : Polygon2D = $Blackout
 onready var tween : Tween = $Tween
 
@@ -17,6 +20,7 @@ var current_level : int = 0
 var stop_on_level : int = 3
 var coins_collected : int = 0
 var player_pos : Vector2
+var coin_conversation_played : bool = false # janky hack, m8!
 
 signal last_level_in_batch_finished
 
@@ -45,6 +49,11 @@ func next_level() -> void:
 		emit_signal("last_level_in_batch_finished")
 	else:
 		spawn_level()
+
+func play_coin_conversation() -> void:
+	if not coin_conversation_played:
+		subtitle_controller.play_scene("scene3")
+		coin_conversation_played = true
 
 func on_level_completed() -> void:
 	fade_out()

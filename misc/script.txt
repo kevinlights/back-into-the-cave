@@ -1,4 +1,4 @@
-T	Come. Let me show you something.
+T	Come over here. Let me show you something.
 S	What is it?
 T	There. See it?
 S	Yeah, it's... an orb.
@@ -10,7 +10,7 @@ S	What is this, a philosophy class?
 T	Humour me.
 S	*sigh* It describes a group of people who have been trapped in a cave since childhood. They're locked in place, unable to move or see anything except the shadows on a wall.
 T	And where do the shadows come from?
-S	There's a fire behind them, and in between, more people, holding up puppets. The prisoners can't see anything except those shadows, so as far as they know, the shadows _are_ the puppets.
+S	There's a fire behind them, and in between, more people, holding up puppets. The prisoners can't see anything except those shadows, so as far as they know, the shadows ARE the puppets.
 T	That's about it, yes.
 S	I don't see what this has to do with... well, anything.
 T	Bear with me. Let's try something else.
@@ -22,7 +22,7 @@ S	Well, it was a sprite. It's pixel art.
 T	So, coins are bright yellow, and have jagged edges?
 S	Well, no, it was a representation.
 T	But you said it was a coin.
-S	Because it was supposed to be a coin.
+S	Because it was SUPPOSED to be a coin.
 
 S	Where are you going with all of this?
 T	If we were to apply the Allegory of the Cave to what we're doing right now, which role would you be?
