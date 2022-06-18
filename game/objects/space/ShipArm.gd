@@ -6,7 +6,8 @@ const ROTATE_INCR : float = 6.0
 const ROTATE_MAX : float = 3.0
 const THRUST_INCR : float = 3.0
 const THRUST_MAX : float = 1.5
-const THRUST_DECR : float = 2.0
+const THRUST_DECR : float = 1.0
+const BRAKE_SPEED : float = 4.0
 
 var ship : Spatial
 
@@ -26,9 +27,9 @@ func stop() -> void:
 
 func _physics_process(delta : float) -> void:
 	if is_instance_valid(ship):
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("left"):
 			turn_speed -= ROTATE_INCR * delta
-		elif Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed("right"):
 			turn_speed += ROTATE_INCR * delta
 		else:
 			turn_speed = move_toward(turn_speed, 0.0, ROTATE_INCR * delta)
@@ -37,8 +38,10 @@ func _physics_process(delta : float) -> void:
 		
 		ship.set_tilt(turn_speed * 15.0)
 		
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("up"):
 			forwards_thrust += THRUST_INCR * delta
+		elif Input.is_action_pressed("down"):
+			forwards_thrust -= BRAKE_SPEED * delta
 		else:
 			forwards_thrust -= THRUST_DECR * delta
 		forwards_thrust = clamp(forwards_thrust, 0.0, THRUST_MAX)
