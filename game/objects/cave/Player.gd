@@ -75,7 +75,7 @@ func _physics_process(delta : float) -> void:
 			velocity = Vector2.ZERO
 		elif collision.normal == Vector2.DOWN:
 			velocity = Vector2.ZERO
-		elif collision.normal.snapped(Vector2(0.25, 0.25)).y == -0.75:
+		elif collision.normal.snapped(Vector2(0.25, 0.25)).y in [0.75, -0.75]:
 			velocity.y = 0.0
 	
 	if Input.is_action_just_pressed("jump") and test_move(transform, Vector2.DOWN):
