@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://music/opening.ogg" type="AudioStream" id=1]
 [ext_resource path="res://objects/MusicController.gd" type="Script" id=2]
+[ext_resource path="res://music/cave.ogg" type="AudioStream" id=3]
 
 [node name="MusicController" type="Node"]
 script = ExtResource( 2 )
 
 [node name="Audio_Opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+bus = "BGM"
+
+[node name="Audio_Cave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 bus = "BGM"

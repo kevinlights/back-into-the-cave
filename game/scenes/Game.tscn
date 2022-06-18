@@ -137,7 +137,7 @@ draw_pass_1 = SubResource( 9 )
 [node name="CameraArm" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="CameraArm"]
-transform = Transform( -0.370017, 0.106763, 0.92287, 0.921554, 0.167911, 0.350064, -0.117586, 0.980004, -0.160518, -8.03871, 27.0966, -49.8606 )
+transform = Transform( -0.370017, 0.106764, 0.92287, 0.921554, 0.167911, 0.350064, -0.117586, 0.980004, -0.160518, -8.03871, 27.0966, -49.8606 )
 current = true
 fov = 80.0
 
@@ -146,6 +146,8 @@ environment = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/intro = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -165,7 +167,7 @@ expand = true
 stretch_mode = 6
 
 [node name="Ident" type="TextureRect" parent="CanvasLayer"]
-modulate = Color( 1, 1, 1, 0.7 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7

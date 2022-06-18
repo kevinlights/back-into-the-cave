@@ -20,6 +20,8 @@ onready var world_environment : WorldEnvironment = $WorldEnvironment
 onready var pause_menu : Control = $CanvasLayer/PauseMenu
 onready var subtitle_controller : Node = $SubtitleController
 onready var music_controller : Node = $MusicController
+onready var anim_player : AnimationPlayer = $AnimationPlayer
+onready var tween : Tween = $Tween
 
 var ship : Spatial
 var level : Spatial
@@ -69,6 +71,14 @@ func restart_level() -> void:
 	yield(get_tree().create_timer(1.5), "timeout")
 	start_level()
 
+func transition_to_cave_scene() -> void:
+	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(0.0, 144.007, 0.0), 8.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera_arm, "translation", null, Vector3(0.0, 0.0, 0.0), 8.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(0.0, -90.0, 0.0), 8.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "translation", null, Vector3(-5.0, 0.0, 0.0), 8.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "fov", null, 35.0, 8.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.start()
+
 func next_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
 	yield(get_tree().create_timer(1.5), "timeout")
@@ -78,7 +88,12 @@ func next_level() -> void:
 	else:
 		if current_level == 3:
 			level.queue_free()
+			music_controller.play_track("cave")
+			transition_to_cave_scene()
+			yield(tween, "tween_all_completed")
 			current_state = State.CAVE_SCENE
+			cave_scene.spawn_level()
+			cave_scene.fade_in()
 			$Inside_2D.show()
 
 func _on_orb_ship_destroyed() -> void:
@@ -126,5 +141,5 @@ func _ready() -> void:
 	yield(get_tree(), "idle_frame")
 	yield(get_tree().create_timer(0.5), "timeout")
 	music_controller.play_track("opening")
-	$AnimationPlayer.play("intro")
-	$AnimationPlayer.seek(18.0)
+	anim_player.play("intro")
+	anim_player.seek(18.0)

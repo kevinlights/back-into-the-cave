@@ -60,8 +60,6 @@ func on_player_dead() -> void:
 	fade_in()
 
 func _physics_process(delta : float) -> void:
-	if is_instance_valid(level.player):
-		player_pos = get_player_pos()
-
-func _ready() -> void:
-	spawn_level()
+	if is_instance_valid(level):
+		if is_instance_valid(level.player):
+			player_pos = get_player_pos()
