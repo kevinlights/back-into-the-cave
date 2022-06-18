@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
 
-[node name="Key" type="Area2D" groups=["coin"]]
+[node name="Key" type="Area2D"]
 z_index = -5
 script = ExtResource( 1 )
 
