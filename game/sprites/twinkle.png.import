@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin.png-54d5e156d7891d9603a51f76f85b4fd9.stex"
+path="res://.import/twinkle.png-f47bd72d97e61a37d22c87924ae44ae6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/coin.png"
-dest_files=[ "res://.import/coin.png-54d5e156d7891d9603a51f76f85b4fd9.stex" ]
+source_file="res://sprites/twinkle.png"
+dest_files=[ "res://.import/twinkle.png-f47bd72d97e61a37d22c87924ae44ae6.stex" ]
 
 [params]
 
