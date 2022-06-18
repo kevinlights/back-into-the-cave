@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/key.png-a2d709fe99edac93aea180e2d39da8db.stex"
+path="res://.import/poof.png-c9760ad3ff14adbefd276d05e5584e7d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/key.png"
-dest_files=[ "res://.import/key.png-a2d709fe99edac93aea180e2d39da8db.stex" ]
+source_file="res://sprites/poof.png"
+dest_files=[ "res://.import/poof.png-c9760ad3ff14adbefd276d05e5584e7d.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
