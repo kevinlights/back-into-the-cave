@@ -44,7 +44,7 @@ align = 2
 
 [node name="Label_JohnGabriel" type="Label" parent="Grid"]
 margin_left = 340.0
-margin_right = 563.0
+margin_right = 566.0
 margin_bottom = 28.0
 text = "John Gabriel"
 
@@ -61,7 +61,7 @@ align = 2
 [node name="Label_VoiceActors" type="Label" parent="Grid"]
 margin_left = 340.0
 margin_top = 38.0
-margin_right = 563.0
+margin_right = 566.0
 margin_bottom = 97.0
 text = "Kameron Watson
 Jett Barker"
@@ -78,7 +78,7 @@ align = 2
 [node name="Label_Sekoia" type="Label" parent="Grid"]
 margin_left = 340.0
 margin_top = 107.0
-margin_right = 563.0
+margin_right = 566.0
 margin_bottom = 135.0
 text = "Sekoia"
 
@@ -94,7 +94,7 @@ align = 2
 [node name="Label_GodotEngine" type="Label" parent="Grid"]
 margin_left = 340.0
 margin_top = 145.0
-margin_right = 563.0
+margin_right = 566.0
 margin_bottom = 173.0
 text = "Godot Engine 3.4.4"
 
@@ -110,8 +110,8 @@ align = 2
 [node name="Label_GWJ" type="Label" parent="Grid"]
 margin_left = 340.0
 margin_top = 183.0
-margin_right = 563.0
+margin_right = 566.0
 margin_bottom = 211.0
-text = "Godot Wild Jam #47"
+text = "Godot Wild Jam #46"
 
 [connection signal="pressed" from="Button_Back" to="." method="_on_Button_Back_pressed"]
