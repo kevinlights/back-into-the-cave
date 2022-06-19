@@ -3,6 +3,7 @@ extends Area
 export (float) var spin_speed
 
 onready var mesh : MeshInstance = $Mesh
+onready var audio_bounce : AudioStreamPlayer3D = $Audio_Bounce
 onready var tween : Tween = $Tween
 
 func set_fire_amount(amount : float) -> void:
@@ -23,6 +24,7 @@ func disappear() -> void:
 func _on_FireRing_body_entered(body) -> void:
 	if body is OrbShip:
 		body.jump()
+		audio_bounce.play()
 
 func _physics_process(delta : float) -> void:
 	rotate_y(spin_speed * delta)
