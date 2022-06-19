@@ -24,7 +24,6 @@ transform = Transform( -4.3715e-08, 1, 0, -1, -4.37078e-08, 0, -1.30967e-10, -1.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0 )
 
 [node name="Fireball1" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Fireball2" parent="." instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )

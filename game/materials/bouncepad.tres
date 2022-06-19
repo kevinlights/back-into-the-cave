@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://textures/gradient_radial.png" type="Texture" id=1]
+[ext_resource path="res://textures/colour_green.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode blend_add;
+
+uniform sampler2D gradient;
+uniform sampler2D colour;
+
+void fragment() {
+	ALBEDO.rgb = vec3(0.0);
+	float v = texture(gradient, UV).r;
+	float ONE_POINT_ZERO = 1.0;
+	v = modf((v + TIME) * 2.0, ONE_POINT_ZERO);
+	v = pow(v, 0.5);
+	EMISSION.rgb = texture(colour, vec2(v, 0.0)).rgb * 3.0;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/gradient = ExtResource( 1 )
+shader_param/colour = ExtResource( 2 )

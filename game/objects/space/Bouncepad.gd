@@ -22,7 +22,7 @@ func disappear() -> void:
 
 func _on_FireRing_body_entered(body) -> void:
 	if body is OrbShip:
-		body.get_hit()
+		body.jump()
 
 func _physics_process(delta : float) -> void:
 	rotate_y(spin_speed * delta)

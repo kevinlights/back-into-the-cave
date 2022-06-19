@@ -34,6 +34,9 @@ func get_hit() -> void:
 	emit_signal("destroyed")
 	queue_free()
 
+func jump() -> void:
+	get_parent().jump() # janky hack, m8!
+
 func disappear() -> void:
 	if disappearing: return
 	disappearing = true

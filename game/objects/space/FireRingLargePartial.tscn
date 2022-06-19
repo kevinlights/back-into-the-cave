@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://meshes/fire_ring_large_partial.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://objects/space/FireRing.gd" type="Script" id=2]
+[ext_resource path="res://materials/flame.tres" type="Material" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.03
+height = 0.3
+
+[node name="FireRingLargePartial" type="Area" groups=["disappearer"]]
+script = ExtResource( 2 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1.05 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.05 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.05, 0, -4.5897e-08 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.05, 0, 4.5897e-08 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="."]
+transform = Transform( -0.340166, 0, 0.940365, 0, 1, 0, -0.940365, 0, -0.340166, 0.357175, 0, 0.987384 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="."]
+transform = Transform( -0.340166, 0, 0.940365, 0, 1, 0, -0.940365, 0, -0.340166, -0.357175, 0, -0.987384 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="."]
+transform = Transform( -0.940365, 0, -0.340166, 0, 1, 0, 0.340166, 0, -0.940365, 0.987384, 0, -0.357175 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="."]
+transform = Transform( -0.940365, 0, -0.340166, 0, 1, 0, 0.340166, 0, -0.940365, -0.987384, 0, 0.357175 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="."]
+transform = Transform( 0.34556, 0, 0.938397, 0, 1, 0, -0.938397, 0, 0.34556, -0.362838, 0, 0.985316 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="."]
+transform = Transform( 0.34556, 0, 0.938397, 0, 1, 0, -0.938397, 0, 0.34556, 0.362838, 0, -0.985316 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="."]
+transform = Transform( -0.938397, 0, 0.34556, 0, 1, 0, -0.34556, 0, -0.938397, 0.985316, 0, 0.362838 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="."]
+transform = Transform( -0.938397, 0, 0.34556, 0, 1, 0, -0.34556, 0, -0.938397, -0.985316, 0, -0.362838 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_FireRing_body_entered"]

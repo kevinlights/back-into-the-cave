@@ -9,6 +9,8 @@ const THRUST_MAX : float = 1.5
 const THRUST_DECR : float = 1.0
 const BRAKE_SPEED : float = 4.0
 
+onready var tween : Tween = $Tween
+
 var ship : Spatial
 
 var forwards_thrust : float = 0.0
@@ -24,6 +26,11 @@ func spawn_ship(spawn_point : Spatial) -> Spatial:
 func stop() -> void:
 	forwards_thrust = 0.0
 	turn_speed = 0.0
+
+func jump() -> void:
+	tween.interpolate_property(ship, "translation", Vector3(-1.1, 0.0, 0.0), Vector3(-2.1, 0.0, 0.0), 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(ship, "translation", Vector3(-2.1, 0.0, 0.0), Vector3(-1.1, 0.0, 0.0), 0.5, Tween.TRANS_QUAD, Tween.EASE_IN, 0.5)
+	tween.start()
 
 func _physics_process(delta : float) -> void:
 	if is_instance_valid(ship):
