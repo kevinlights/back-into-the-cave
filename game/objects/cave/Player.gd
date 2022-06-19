@@ -10,6 +10,7 @@ const HILL_CLIMB_SPEED : float = 20.0
 const JUMP_SPEED : float = 128.0
 const FALL_INCR : float = 386.0
 const MAX_FALL_SPEED : float = 160.0
+const COYOTE_ALLOWANCE : float = 0.18
 const CAVE_WIDTH : float = 320.0
 const ANIM_SPEED : float = 10.0
 
@@ -19,6 +20,7 @@ onready var sprite_mirror_r : Sprite = $Sprite_MirrorR
 
 var velocity : Vector2 = Vector2.ZERO
 var anim_index : float = 0.0
+var coyote_timer : float = 0.0
 
 signal dead
 
@@ -67,6 +69,8 @@ func _physics_process(delta : float) -> void:
 	sprite.frame = 0 if not running else wrapi(anim_index, 1, 5)
 	if not test_move(transform, Vector2.DOWN):
 		sprite.frame = 5
+	else:
+		coyote_timer = 0.0
 	
 	var collision : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision != null:
@@ -75,12 +79,16 @@ func _physics_process(delta : float) -> void:
 				SoundController.play_sound("land")
 				do_the_dusty()
 			velocity = Vector2.ZERO
+			coyote_timer = 0.0
 		elif collision.normal == Vector2.DOWN:
 			velocity = Vector2.ZERO
 		elif collision.normal.snapped(Vector2(0.25, 0.25)).y in [0.75, -0.75]:
 			velocity.y = 0.0
+			coyote_timer = 0.0
 	
-	if Input.is_action_just_pressed("jump") and test_move(transform, Vector2.DOWN):
+	coyote_timer += delta
+	var can_jump : bool = test_move(transform, Vector2.DOWN) or (coyote_timer < COYOTE_ALLOWANCE)
+	if Input.is_action_just_pressed("jump") and can_jump:
 		velocity = Vector2(0, -JUMP_SPEED)
 		sprite.frame = 5
 		position.y -= 1.0
