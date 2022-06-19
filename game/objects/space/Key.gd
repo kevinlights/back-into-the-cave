@@ -1,6 +1,7 @@
 extends Area
 
 onready var particles : Particles = $Particles
+onready var audio_picked_up : AudioStreamPlayer3D = $Audio_PickedUp
 onready var tween : Tween = $Tween
 
 var collected : bool = false
@@ -17,6 +18,7 @@ func _on_Key_body_entered(body) -> void:
 		collected = true
 		tween.interpolate_property(self, "scale", null, Vector3.ZERO, 0.5)
 		tween.start()
+		audio_picked_up.play()
 		get_tree().call_group("game", "_on_key_collected")
 
 func _physics_process(delta : float) -> void:
