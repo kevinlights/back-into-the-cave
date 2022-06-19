@@ -9,6 +9,7 @@ render_mode blend_add;
 
 uniform sampler2D gradient;
 uniform sampler2D colour;
+uniform float amount;
 
 void fragment() {
 	ALBEDO.rgb = vec3(0.0);
@@ -16,10 +17,11 @@ void fragment() {
 	float ONE_POINT_ZERO = 1.0;
 	v = modf((v + TIME) * 2.0, ONE_POINT_ZERO);
 	v = pow(v, 0.5);
-	EMISSION.rgb = texture(colour, vec2(v, 0.0)).rgb * 3.0;
+	EMISSION.rgb = texture(colour, vec2(v, 0.0)).rgb * 3.0 * amount;
 }"
 
 [resource]
 shader = SubResource( 1 )
+shader_param/amount = 1.0
 shader_param/gradient = ExtResource( 1 )
 shader_param/colour = ExtResource( 2 )
