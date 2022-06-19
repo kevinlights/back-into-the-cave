@@ -61,13 +61,10 @@ position = Vector2( 184, 40 )
 position = Vector2( 24, 120 )
 
 [node name="Torch5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 136, 112 )
+position = Vector2( 160, 112 )
 
 [node name="Torch6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 248, 88 )
-
-[node name="Torch7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 152, 112 )
 
 [node name="Coin1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 32, 72 )

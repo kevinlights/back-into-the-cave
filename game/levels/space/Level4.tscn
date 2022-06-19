@@ -31,25 +31,25 @@ transform = Transform( 1, 4.79474e-11, -4.79474e-11, 3.69553e-11, -4.38278e-08, 
 transform = Transform( 1, 4.79474e-11, 4.79474e-11, 6.60591e-11, -4.3595e-08, -1, -3.69553e-11, 1, -4.38278e-08, 0, 0, 0 )
 
 [node name="Fireball1" parent="." instance=ExtResource( 2 )]
-transform = Transform( -4.37078e-08, -1, 0, 1, -4.37149e-08, 0, 1.01863e-10, -1.30967e-10, 1, 0, 0, 0 )
+transform = Transform( 1.13562e-07, 0.866026, 0.5, -1, 1.31131e-07, 2.57536e-11, -6.56703e-08, -0.5, 0.866026, 0, 0, 0 )
 
 [node name="Fireball2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 9.27271e-08, 0.707107, 0.707107, -1, 1.31123e-07, 3.64211e-11, -9.28161e-08, -0.707107, 0.707107, 0, 0, 0 )
+transform = Transform( -6.5506e-08, -0.5, 0.866026, -1, 1.31061e-07, 4.46066e-11, -1.1363e-07, -0.866026, -0.5, 0, 0, 0 )
 
 [node name="Fireball3" parent="." instance=ExtResource( 2 )]
-transform = Transform( -6.24974e-11, 4.3595e-08, 1, 1, -4.36634e-08, 5.15072e-11, 4.37763e-08, 1, -4.36968e-08, 0, 0, 0 )
+transform = Transform( -1.13466e-07, -0.866026, -0.5, -1, 1.31042e-07, -2.57536e-11, 6.54375e-08, 0.5, -0.866026, 0, 0, 0 )
 
 [node name="Fireball4" parent="." instance=ExtResource( 2 )]
-transform = Transform( -9.26518e-08, -0.707107, 0.707107, -1, 1.3105e-07, 3.64211e-11, -9.27956e-08, -0.707107, -0.707107, 0, 0, 0 )
+transform = Transform( 6.56019e-08, 0.5, -0.866026, -1, 1.31112e-07, -4.46066e-11, 1.13397e-07, 0.866026, 0.5, 0, 0, 0 )
 
 [node name="Fireball5" parent="." instance=ExtResource( 2 )]
-transform = Transform( 4.36119e-08, 1, -8.74228e-08, 1, -4.36119e-08, -4.5029e-18, 1.30963e-10, -8.72918e-08, -1, 0, 0, 0 )
+transform = Transform( 1.13466e-07, 0.866026, 0.5, 1, -1.74753e-07, 7.57361e-08, 1.53093e-07, 0.5, -0.866026, 0, 0, 0 )
 
 [node name="Fireball6" parent="." instance=ExtResource( 2 )]
-transform = Transform( -9.26312e-08, -0.707107, -0.707107, -1, 1.3105e-07, -3.64211e-11, 9.25833e-08, 0.707107, -0.707107, 0, 0, 0 )
+transform = Transform( -6.56019e-08, -0.5, 0.866026, 1, -2.06823e-07, -4.36668e-08, 2.01053e-07, 0.866026, 0.5, 0, 0, 0 )
 
 [node name="Fireball7" parent="." instance=ExtResource( 2 )]
-transform = Transform( -3.34012e-11, -1.31018e-07, -1, 1, -4.36634e-08, -5.15072e-11, -4.35435e-08, -1, 1.3112e-07, 0, 0, 0 )
+transform = Transform( -1.13562e-07, -0.866026, -0.5, 1, -8.74196e-08, -7.57361e-08, 2.19853e-08, -0.5, 0.866026, 0, 0, 0 )
 
 [node name="Fireball8" parent="." instance=ExtResource( 2 )]
-transform = Transform( 9.27477e-08, 0.707107, -0.707107, -1, 1.31123e-07, -3.64211e-11, 9.25627e-08, 0.707107, 0.707107, 0, 0, 0 )
+transform = Transform( 6.5506e-08, 0.5, -0.866026, 1, -5.53505e-08, 4.36668e-08, -2.59744e-08, -0.866026, -0.5, 0, 0, 0 )

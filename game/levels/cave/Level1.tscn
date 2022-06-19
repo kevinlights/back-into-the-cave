@@ -35,7 +35,7 @@ position = Vector2( 72, 104 )
 position = Vector2( 32, 120 )
 
 [node name="Grass3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 48, 72 )
+position = Vector2( 56, 72 )
 
 [node name="Grass4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 120 )
