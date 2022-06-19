@@ -4,7 +4,6 @@ const LEVELS : Array = [
 	preload("res://levels/space/Level1.tscn"),
 	preload("res://levels/space/Level2.tscn"),
 	preload("res://levels/space/Level3.tscn"),
-	preload("res://levels/space/Level1.tscn"),
 	preload("res://levels/space/Level2.tscn"),
 	preload("res://levels/space/Level3.tscn"),
 	preload("res://levels/space/Level1.tscn"),
@@ -21,11 +20,13 @@ onready var camera : Camera = $CameraArm/Camera
 onready var cave_scene : Node2D = $Viewport_CaveScene/CaveScene
 onready var ship_arm : Spatial = $ShipArm
 onready var timer_respawn_orb_ship : Timer = $Timer_RespawnOrbShip
+onready var timer_second_count : Timer = $Timer_SecondCount
 onready var particles_stars : Particles = $Particles_Stars
 onready var world_environment : WorldEnvironment = $WorldEnvironment
 onready var pause_menu : Control = $CanvasLayer/PauseMenu
 onready var subtitle_controller : Node = $SubtitleController
 onready var music_controller : Node = $MusicController
+onready var the_end : Control = $CanvasLayer/TheEnd
 onready var anim_player : AnimationPlayer = $AnimationPlayer
 onready var tween : Tween = $Tween
 
@@ -36,6 +37,8 @@ var current_state : int = State.INTRO
 var current_level : int = 0
 var stop_on_level : int = 3
 var keys_collected : int = 0
+var deaths : int = 0
+var seconds_taken : int = 0
 
 func apply_graphics_settings() -> void:
 	world_environment.environment.glow_enabled = true if Settings.glow_amount > 0 else false
@@ -93,6 +96,12 @@ func transition_to_space_scene() -> void:
 	tween.interpolate_property(camera, "fov", null, 70.0, 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	tween.start()
 
+func transition_to_ending() -> void:
+	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(0.0, -90.0, 0.0), 40.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "translation", null, camera.translation * 10.0, 40.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "fov", null, 90.0, 40.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.start()
+
 func last_space_level_in_batch_finished() -> void:
 	level.queue_free()
 	match current_level:
@@ -103,17 +112,22 @@ func last_space_level_in_batch_finished() -> void:
 			current_state = State.CAVE_SCENE
 			cave_scene.spawn_level()
 			cave_scene.fade_in()
-		6:
+		5:
 			transition_to_cave_scene()
 			yield(tween, "tween_all_completed")
 			current_state = State.CAVE_SCENE
 			cave_scene.current_level = 3
-			cave_scene.stop_on_level = 6
+			cave_scene.stop_on_level = 5
 			cave_scene.spawn_level()
 			cave_scene.fade_in()
 			subtitle_controller.play_scene("scene4")
-		9:
+		8:
+			timer_second_count.stop()
+			transition_to_ending()
 			subtitle_controller.play_scene("scene6")
+			music_controller.play_track("opening")
+			yield(get_tree().create_timer(30.0), "timeout")
+			the_end.play_ending(seconds_taken / 60, seconds_taken % 60, deaths + cave_scene.deaths, cave_scene.coins_collected)
 
 func next_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
@@ -125,20 +139,23 @@ func next_level() -> void:
 		last_space_level_in_batch_finished()
 
 func _on_CaveScene_last_level_in_batch_finished() -> void:
-	if current_level == 3:
-		music_controller.play_track("conceit")
 	transition_to_space_scene()
-	yield(tween, "tween_all_completed")
-	current_state = State.SHIP_SCENE
-	if current_level == 3:
-		stop_on_level = 6
-	elif current_level == 6:
-		stop_on_level = 9
-		subtitle_controller.play_scene("scene5")
+	match current_level:
+		3:
+			music_controller.play_track("conceit")
+			yield(tween, "tween_all_completed")
+			current_state = State.SHIP_SCENE
+			stop_on_level = 5
+		5:
+			yield(tween, "tween_all_completed")
+			current_state = State.SHIP_SCENE
+			stop_on_level = 8
+			subtitle_controller.play_scene("scene5")
 	spawn_level()
 	spawn_orb_ship()
 
 func _on_orb_ship_destroyed() -> void:
+	deaths += 1
 	ship_arm.stop()
 	restart_level()
 
@@ -154,9 +171,13 @@ func _on_AnimationPlayer_animation_finished(anim_name : String) -> void:
 		spawn_level()
 		spawn_orb_ship()
 		subtitle_controller.play_scene("scene2")
+		timer_second_count.start()
 
 func _on_Timer_RespawnOrbShip_timeout() -> void:
 	spawn_orb_ship()
+
+func _on_Timer_SecondCount_timeout() -> void:
+	seconds_taken += 1
 
 func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("pause"):

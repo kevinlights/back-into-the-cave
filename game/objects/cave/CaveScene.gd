@@ -5,8 +5,7 @@ const LEVELS : Array = [
 	preload("res://levels/cave/Level2.tscn"),
 	preload("res://levels/cave/Level3.tscn"),
 	preload("res://levels/cave/Level4.tscn"),
-	preload("res://levels/cave/Level2.tscn"),
-	preload("res://levels/cave/Level3.tscn")
+	preload("res://levels/cave/Level2.tscn")
 ]
 
 const WORLD_SIZE : Vector2 = Vector2(320, 180)
@@ -22,6 +21,7 @@ var level : Node2D
 var current_level : int = 0
 var stop_on_level : int = 3
 var coins_collected : int = 0
+var deaths : int = 0
 var player_pos : Vector2
 var coin_conversation_played : bool = false # janky hack, m8!
 
@@ -67,6 +67,7 @@ func on_level_completed() -> void:
 	fade_in()
 
 func on_player_dead() -> void:
+	deaths += 1
 	fade_out()
 	yield(tween, "tween_all_completed")
 	spawn_level()

@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://objects/TheEnd.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ending"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBox/Label_Time:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBox/Label_Deaths:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBox/Label_Coins:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.9, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VBox/Label_Thanks:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="TheEnd" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -205.5
+margin_top = -80.0
+margin_right = 205.5
+margin_bottom = 80.0
+
+[node name="Label_Time" type="Label" parent="VBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 411.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+text = "Your time was 3 minutes, 26 seconds."
+align = 1
+
+[node name="Label_Deaths" type="Label" parent="VBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 32.0
+margin_right = 411.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "You died 7 times."
+align = 1
+
+[node name="Label_Coins" type="Label" parent="VBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 64.0
+margin_right = 411.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 1 )
+text = "You collected 14 coins."
+align = 1
+
+[node name="Label_Thanks" type="Label" parent="VBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 96.0
+margin_right = 411.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 64 )
+custom_fonts/font = ExtResource( 1 )
+text = "Thank you for playing."
+align = 1
+valign = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ending = SubResource( 1 )
