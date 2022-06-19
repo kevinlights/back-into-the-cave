@@ -183,6 +183,9 @@ func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		pause_menu.pause()
 		get_tree().set_input_as_handled()
+	# Skip opening
+	if event.is_action_pressed("jump") and anim_player.current_animation == "intro" and anim_player.current_animation_position < 21.0:
+		anim_player.seek(21.0)
 
 func _physics_process(delta : float) -> void:
 	if current_state == State.SHIP_SCENE and is_instance_valid(ship):
