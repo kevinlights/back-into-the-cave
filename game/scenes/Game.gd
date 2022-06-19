@@ -81,6 +81,7 @@ func restart_level() -> void:
 	start_level()
 
 func transition_to_cave_scene() -> void:
+	camera_arm.rotation_degrees.y = wrapf(camera_arm.rotation_degrees.y, 0.0, 360.0)
 	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(0.0, 144.007, 0.0), 8.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera_arm, "translation", null, Vector3(0.0, 0.0, 0.0), 8.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(0.0, -90.0, 0.0), 8.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
@@ -89,6 +90,7 @@ func transition_to_cave_scene() -> void:
 	tween.start()
 
 func transition_to_space_scene() -> void:
+	camera_arm.rotation_degrees.y = wrapf(camera_arm.rotation_degrees.y, 0.0, 360.0) - 360.0
 	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(-60.0, -180.0, 90.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera_arm, "translation", null, Vector3(0.0, 0.0, 0.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(0.0, -100.0, -90.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
