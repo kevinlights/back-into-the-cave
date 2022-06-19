@@ -35,6 +35,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Settings="*res://scripts/Settings.gd"
+SoundController="*res://objects/SoundController.tscn"
 
 [display]
 

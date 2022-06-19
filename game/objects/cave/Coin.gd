@@ -14,6 +14,7 @@ func _on_Coin_body_entered(body) -> void:
 			get_parent().add_child(twinkle)
 			twinkle.global_position = self.global_position + Vector2(4, 4)
 			twinkle.velocity = Vector2.RIGHT.rotated(deg2rad(dir)) * 32.0
+		SoundController.play_sound("coin")
 		emit_signal("collected")
 		get_tree().call_group("cave_controller", "play_coin_conversation")
 		queue_free()

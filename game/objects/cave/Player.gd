@@ -45,6 +45,7 @@ func move(direction : Vector2, delta : float) -> void:
 
 func _on_Area_DeadlyFinder_body_entered(body) -> void:
 	poof()
+	SoundController.play_sound("miss")
 	emit_signal("dead")
 	queue_free()
 
@@ -71,6 +72,7 @@ func _physics_process(delta : float) -> void:
 	if collision != null:
 		if collision.normal == Vector2.UP:
 			if velocity.y > 96.0:
+				SoundController.play_sound("land")
 				do_the_dusty()
 			velocity = Vector2.ZERO
 		elif collision.normal == Vector2.DOWN:
@@ -82,6 +84,7 @@ func _physics_process(delta : float) -> void:
 		velocity = Vector2(0, -JUMP_SPEED)
 		sprite.frame = 5
 		position.y -= 1.0
+		SoundController.play_sound("jump")
 	
 	sprite_mirror_l.flip_h = sprite.flip_h
 	sprite_mirror_r.flip_h = sprite.flip_h
