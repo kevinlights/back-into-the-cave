@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.03
-height = 0.3
+height = 0.25
 
 [node name="FireRingLargePartial" type="Area" groups=["disappearer"]]
 script = ExtResource( 2 )

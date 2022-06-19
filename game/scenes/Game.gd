@@ -6,9 +6,9 @@ const LEVELS : Array = [
 	preload("res://levels/space/Level3.tscn"),
 	preload("res://levels/space/Level4.tscn"),
 	preload("res://levels/space/Level5.tscn"),
-	preload("res://levels/space/Level1.tscn"),
-	preload("res://levels/space/Level2.tscn"),
-	preload("res://levels/space/Level3.tscn"),
+	preload("res://levels/space/Level6.tscn"),
+	preload("res://levels/space/Level7.tscn"),
+	preload("res://levels/space/Level8.tscn"),
 ]
 
 const CAMERA_MOVE_SPEED : float = 3.0

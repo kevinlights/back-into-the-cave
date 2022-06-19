@@ -17,6 +17,7 @@ var forwards_thrust : float = 0.0
 var turn_speed : float = 0.0
 
 func spawn_ship(spawn_point : Spatial) -> Spatial:
+	stop()
 	ship = _OrbShip.instance()
 	add_child(ship)
 	ship.translation.x = -1.1
