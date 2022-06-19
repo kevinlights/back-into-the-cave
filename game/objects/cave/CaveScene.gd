@@ -5,7 +5,7 @@ const LEVELS : Array = [
 	preload("res://levels/cave/Level2.tscn"),
 	preload("res://levels/cave/Level3.tscn"),
 	preload("res://levels/cave/Level4.tscn"),
-	preload("res://levels/cave/Level2.tscn")
+	preload("res://levels/cave/Level5.tscn")
 ]
 
 const WORLD_SIZE : Vector2 = Vector2(320, 180)
