@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
+volume_db = 3.0
 bus = "VO"
 
 [node name="Timer_UpdateSubtitle" type="Timer" parent="."]

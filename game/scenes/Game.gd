@@ -89,10 +89,10 @@ func transition_to_cave_scene() -> void:
 	tween.start()
 
 func transition_to_space_scene() -> void:
-	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(0.0, 213.1, 0.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(-60.0, -180.0, 90.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera_arm, "translation", null, Vector3(0.0, 0.0, 0.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(6.0, 45.0, -50.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
-	tween.interpolate_property(camera, "translation", null, Vector3(2.5, 0.6, 1.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(0.0, -100.0, -90.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "translation", null, Vector3(-2.7, -0.15, 0.62), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	tween.interpolate_property(camera, "fov", null, 70.0, 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	tween.start()
 
@@ -205,4 +205,4 @@ func _ready() -> void:
 	yield(get_tree().create_timer(0.5), "timeout")
 	music_controller.play_track("opening")
 	anim_player.play("intro")
-	anim_player.seek(18.0)
+	#anim_player.seek(18.0)

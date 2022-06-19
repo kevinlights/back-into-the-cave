@@ -28,7 +28,7 @@ bus = "SFX"
 
 [node name="Audio_Land" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -8.0
+volume_db = -11.0
 bus = "SFX"
 
 [node name="Audio_Miss" type="AudioStreamPlayer" parent="."]

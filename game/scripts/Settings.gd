@@ -77,7 +77,7 @@ func load_config() -> void:
 	glow_amount = config.get_value("graphics", "glow_amount", 2)
 	glow_quality = config.get_value("graphics", "glow_quality", 2)
 	msaa = config.get_value("graphics", "msaa", 0)
-	volume_music = config.get_value("audio", "volume_music", 1.0)
+	volume_music = config.get_value("audio", "volume_music", 0.70)
 	volume_sfx = config.get_value("audio", "volume_sfx", 1.0)
 	volume_vo = config.get_value("audio", "volume_vo", 1.0)
 	volume_ui = config.get_value("audio", "volume_ui", 1.0)
