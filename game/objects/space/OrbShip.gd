@@ -7,6 +7,7 @@ const _Explosion : PackedScene = preload("res://objects/space/Explosion.tscn")
 onready var mesh : MeshInstance = $Mesh
 onready var thruster : Spatial = $Mesh/Thruster
 onready var glowything : Spatial = $Glowything
+onready var audio_engine : AudioStreamPlayer3D = $Audio_Engine
 onready var camera : Camera = $Camera
 onready var tween : Tween = $Tween
 
@@ -16,6 +17,8 @@ signal destroyed
 
 func set_thrust_scale(amount : float) -> void:
 	thruster.scale = Vector3(amount * rand_range(0.9, 1.1), amount * rand_range(0.9, 1.1), amount * rand_range(1.0, 2.0))
+	audio_engine.pitch_scale = range_lerp(amount, 0.0, 1.0, 1.0, 2.0)
+	audio_engine.unit_db = range_lerp(amount, 0.0, 1.0, -30.0, -10.0)
 
 func set_tilt(angle : float) -> void:
 	mesh.rotation_degrees.z = angle
