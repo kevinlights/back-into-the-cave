@@ -2,7 +2,8 @@ extends Node
 
 onready var TRACKS : Dictionary = {
 	"opening": $Audio_Opening,
-	"cave": $Audio_Cave
+	"cave": $Audio_Cave,
+	"conceit": $Audio_Conceit
 }
 
 func play_track(track_name : String) -> void:
