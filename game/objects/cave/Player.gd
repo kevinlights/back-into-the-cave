@@ -88,6 +88,8 @@ func _physics_process(delta : float) -> void:
 	
 	sprite_mirror_l.flip_h = sprite.flip_h
 	sprite_mirror_r.flip_h = sprite.flip_h
+	sprite_mirror_l.frame = sprite.frame
+	sprite_mirror_r.frame = sprite.frame
 	
 	if position.x > CAVE_WIDTH:
 		position.x -= CAVE_WIDTH
