@@ -31,10 +31,12 @@ func get_player_pos() -> Vector2:
 	return level.player.position / WORLD_SIZE
 
 func fade_out() -> void:
+	blackout.modulate = Color.transparent
 	tween.interpolate_property(blackout, "modulate", null, Color.white, 0.5)
 	tween.start()
 
 func fade_in() -> void:
+	blackout.modulate = Color.white
 	tween.interpolate_property(blackout, "modulate", null, Color.transparent, 0.5)
 	tween.start()
 
