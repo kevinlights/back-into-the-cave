@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/SimpleBox.tres" type="Theme" id=1]
+[ext_resource path="res://objects/Credits.gd" type="Script" id=2]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Button_Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -33.5
+margin_top = -74.0
+margin_right = 33.5
+margin_bottom = -40.0
+text = "Back"
+
+[node name="Grid" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -340.0
+margin_top = -86.5
+margin_right = 340.0
+margin_bottom = 86.5
+rect_min_size = Vector2( 680, 0 )
+custom_constants/vseparation = 10
+custom_constants/hseparation = 20
+columns = 2
+
+[node name="Label_MadeBy" type="Label" parent="Grid"]
+margin_right = 320.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Made by"
+align = 2
+
+[node name="Label_JohnGabriel" type="Label" parent="Grid"]
+margin_left = 340.0
+margin_right = 563.0
+margin_bottom = 28.0
+text = "John Gabriel"
+
+[node name="Label_Featuring" type="Label" parent="Grid"]
+margin_top = 38.0
+margin_right = 320.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 0, 59 )
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Featuring the vocal talents of"
+align = 2
+
+[node name="Label_VoiceActors" type="Label" parent="Grid"]
+margin_left = 340.0
+margin_top = 38.0
+margin_right = 563.0
+margin_bottom = 97.0
+text = "Kameron Watson
+Jett Barker"
+
+[node name="Label_MadeWith" type="Label" parent="Grid"]
+margin_top = 107.0
+margin_right = 320.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Made with"
+align = 2
+
+[node name="Label_GodotEngine" type="Label" parent="Grid"]
+margin_left = 340.0
+margin_top = 107.0
+margin_right = 563.0
+margin_bottom = 135.0
+text = "Godot Engine 3.4.4"
+
+[node name="Label_MadeFor" type="Label" parent="Grid"]
+margin_top = 145.0
+margin_right = 320.0
+margin_bottom = 173.0
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Made for"
+align = 2
+
+[node name="Label_GWJ" type="Label" parent="Grid"]
+margin_left = 340.0
+margin_top = 145.0
+margin_right = 563.0
+margin_bottom = 173.0
+text = "Godot Wild Jam #47"
+
+[connection signal="pressed" from="Button_Back" to="." method="_on_Button_Back_pressed"]
