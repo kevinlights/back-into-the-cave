@@ -122,7 +122,6 @@ skeleton = NodePath("../Orb")
 material/0 = SubResource( 4 )
 
 [node name="Inside_2D" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../Orb")
 material/0 = SubResource( 18 )
@@ -208,5 +207,6 @@ path_label_subtitle = NodePath("../CanvasLayer/Label_Subtitle")
 
 [node name="MusicController" parent="." instance=ExtResource( 13 )]
 
+[connection signal="last_level_in_batch_finished" from="Viewport_CaveScene/CaveScene" to="." method="_on_CaveScene_last_level_in_batch_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_RespawnOrbShip" to="." method="_on_Timer_RespawnOrbShip_timeout"]

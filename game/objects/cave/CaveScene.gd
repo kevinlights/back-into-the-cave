@@ -3,6 +3,9 @@ extends Node2D
 const LEVELS : Array = [
 	preload("res://levels/cave/Level1.tscn"),
 	preload("res://levels/cave/Level2.tscn"),
+	preload("res://levels/cave/Level3.tscn"),
+	preload("res://levels/cave/Level4.tscn"),
+	preload("res://levels/cave/Level2.tscn"),
 	preload("res://levels/cave/Level3.tscn")
 ]
 
@@ -46,6 +49,7 @@ func spawn_level() -> void:
 func next_level() -> void:
 	current_level += 1
 	if current_level >= stop_on_level:
+		level.queue_free()
 		emit_signal("last_level_in_batch_finished")
 	else:
 		spawn_level()

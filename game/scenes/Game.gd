@@ -4,6 +4,12 @@ const LEVELS : Array = [
 	preload("res://levels/space/Level1.tscn"),
 	preload("res://levels/space/Level2.tscn"),
 	preload("res://levels/space/Level3.tscn"),
+	preload("res://levels/space/Level1.tscn"),
+	preload("res://levels/space/Level2.tscn"),
+	preload("res://levels/space/Level3.tscn"),
+	preload("res://levels/space/Level1.tscn"),
+	preload("res://levels/space/Level2.tscn"),
+	preload("res://levels/space/Level3.tscn"),
 ]
 
 const CAMERA_MOVE_SPEED : float = 3.0
@@ -79,6 +85,36 @@ func transition_to_cave_scene() -> void:
 	tween.interpolate_property(camera, "fov", null, 35.0, 8.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	tween.start()
 
+func transition_to_space_scene() -> void:
+	tween.interpolate_property(camera_arm, "rotation_degrees", null, Vector3(0.0, 213.1, 0.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera_arm, "translation", null, Vector3(0.0, 0.0, 0.0), 5.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "rotation_degrees", null, Vector3(6.0, 45.0, -50.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "translation", null, Vector3(2.5, 0.6, 1.0), 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(camera, "fov", null, 70.0, 5.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.start()
+
+func last_space_level_in_batch_finished() -> void:
+	level.queue_free()
+	match current_level:
+		3:
+			music_controller.play_track("cave")
+			transition_to_cave_scene()
+			yield(tween, "tween_all_completed")
+			current_state = State.CAVE_SCENE
+			cave_scene.spawn_level()
+			cave_scene.fade_in()
+		6:
+			transition_to_cave_scene()
+			yield(tween, "tween_all_completed")
+			current_state = State.CAVE_SCENE
+			cave_scene.current_level = 3
+			cave_scene.stop_on_level = 6
+			cave_scene.spawn_level()
+			cave_scene.fade_in()
+			subtitle_controller.play_scene("scene4")
+		9:
+			subtitle_controller.play_scene("scene6")
+
 func next_level() -> void:
 	get_tree().call_group("disappearer", "disappear")
 	yield(get_tree().create_timer(1.5), "timeout")
@@ -86,15 +122,21 @@ func next_level() -> void:
 	if current_level != stop_on_level:
 		start_level()
 	else:
-		if current_level == 3:
-			level.queue_free()
-			music_controller.play_track("cave")
-			transition_to_cave_scene()
-			yield(tween, "tween_all_completed")
-			current_state = State.CAVE_SCENE
-			cave_scene.spawn_level()
-			cave_scene.fade_in()
-			$Inside_2D.show()
+		last_space_level_in_batch_finished()
+
+func _on_CaveScene_last_level_in_batch_finished() -> void:
+	if current_level == 3:
+		music_controller.play_track("conceit")
+	transition_to_space_scene()
+	yield(tween, "tween_all_completed")
+	current_state = State.SHIP_SCENE
+	if current_level == 3:
+		stop_on_level = 6
+	elif current_level == 6:
+		stop_on_level = 9
+		subtitle_controller.play_scene("scene5")
+	spawn_level()
+	spawn_orb_ship()
 
 func _on_orb_ship_destroyed() -> void:
 	ship_arm.stop()
@@ -142,4 +184,4 @@ func _ready() -> void:
 	yield(get_tree().create_timer(0.5), "timeout")
 	music_controller.play_track("opening")
 	anim_player.play("intro")
-	#anim_player.seek(18.0)
+	anim_player.seek(18.0)
